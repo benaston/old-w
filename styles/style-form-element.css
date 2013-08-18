@@ -120,6 +120,7 @@ vertical-align: middle;
 outline: none;
 padding: 0;
 -webkit-transition: border linear 0.2s, box-shadow linear 0.2s;
+width: 226px;
 }
 
 .field {

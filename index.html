@@ -1,6 +1,8 @@
 <!DOCTYPE html>
-<html>
-  <head>    
+<html lang="en">
+  <head>  
+    <!-- Copyright Ben Aston 2013. All rights reserved. -->
+    <meta name="author" content="Ben Aston">  
     <link rel="stylesheet" type="text/css" href="./styles/style-typography.css">
     <link rel="stylesheet" type="text/css" href="./styles/style-layout.css">
     <link rel="stylesheet" type="text/css" href="./styles/style-form-element.css">
@@ -8,8 +10,13 @@
     <link rel="stylesheet" type="text/css" href="./styles/style-special.css">
     <link rel="stylesheet" type="text/css" href="./styles/style-cube.css">
     <link rel="stylesheet" type="text/css" href="./styles/style-wizerati.css">
-    <style>     
-    </style>
+    <noscript>
+      <style>        
+        body * {display:none !important;}
+        body {width:100%;}
+        #no-script{display:block !important;}
+      </style>
+    </noscript> 
   </head>
   <body class="lucid-app-wrapper">  
     <div class="lucid-panel-absolute-full-height search-panel overflow-visible">      
@@ -110,15 +117,7 @@
             </tbody> 
           </table> 
         </div> 
-        <div class="cube">            
-          <figure class="center latitude">
-          </figure>
-          <figure class="center longitude">
-          </figure>
-          <figure class="center orbit">
-          </figure>
-          <figure class="center">
-          </figure>
+        <div class="cube">          
           <figure class="front"> 
             <div class="favourites" ondrop="drop(event)" ondragover="allowDrop(event)">        
             </div> 
@@ -137,6 +136,34 @@
           </figure> 
           <figure class="top"> 
             <div class="favourites" data-list-to-list-destination-name="favourites" ondrop="drop(event)" ondragover="allowDrop(event)"> 
+              <div class="hover" data-list-to-list-item-id="1"> 
+                <div class="thumbnail thumbnail-108"> 
+                  <h3>C# Developer / Technical Lead</h3>
+                  <h4>&pound;475-500/day</h4>
+                  <h4>London</h4>
+                </div>       
+              </div>
+              <div class="hover" data-list-to-list-item-id="1"> 
+                <div class="thumbnail thumbnail-108"> 
+                  <h3>C# Developer / Technical Lead</h3>
+                  <h4>&pound;475-500/day</h4>
+                  <h4>London</h4>
+                </div>       
+              </div>
+              <div class="hover" data-list-to-list-item-id="1"> 
+                <div class="thumbnail thumbnail-108"> 
+                  <h3>C# Developer / Technical Lead</h3>
+                  <h4>&pound;475-500/day</h4>
+                  <h4>London</h4>
+                </div>       
+              </div>
+              <div class="hover" data-list-to-list-item-id="1"> 
+                <div class="thumbnail thumbnail-108"> 
+                  <h3>C# Developer / Technical Lead</h3>
+                  <h4>&pound;475-500/day</h4>
+                  <h4>London</h4>
+                </div>       
+              </div>
             </div> 
           </figure> 
           <figure class="bottom"> 
@@ -145,7 +172,7 @@
           </figure> 
         </div> 
         <ol class="cube-face-labels"> 
-          <li for="f-t">My Job Search (Web Companies)</li> 
+          <li for="f-t">My Job Search (Untitled)</li> 
           <li for="f-l">My Job Search (Contracting)</li> 
           <li for="f-f">My Job Search (Untitled)</li> 
           <li for="f-r">My Job Search (Untitled)</li> 
@@ -164,31 +191,31 @@
       <div class="thumbnail thumbnail-219">  
         <div class="thumbnail-info pictos" data-list-to-list-action="toggle" data-list-to-list-name="favourites" data-list-to-list-item-id="1">S</div>
         <h3>C# Developer / Technical Lead</h3>   
-        <p class="rate">£475-550/day (more for excellent candidates)</p> 
+        <p class="rate">475-550GBP/day (more for excellent candidates)</p> 
         <p class="location-and-posted">London (1 day ago)</p> 
       </div>
       <div class="thumbnail thumbnail-219">  
         <div class="thumbnail-info pictos" data-list-to-list-action="toggle" data-list-to-list-name="favourites" data-list-to-list-item-id="2">S</div>
-        <h3>Software Architect C#/.Net/Silverlight - Banking - Zürich</h3>   
-        <p class="rate">£400-500/day</p> 
+        <h3>Software Architect C#/.Net/Silverlight - Banking - Zurich</h3>   
+        <p class="rate">400-500GBP/day</p> 
         <p class="location-and-posted">Zurich (2 days ago)</p> 
       </div> 
       <div class="thumbnail thumbnail-219">  
         <div class="thumbnail-info pictos" data-list-to-list-action="toggle" data-list-to-list-name="favourites" data-list-to-list-item-id="3">S</div>
         <h3>Front Office C# Engineer - Interest Rates &amp; Pricing</h3>   
-        <p class="rate">550-575/day</p> 
+        <p class="rate">550-575GBP/day</p> 
         <p class="location-and-posted">London (3 days ago)</p>                
       </div>
       <div class="thumbnail thumbnail-219">  
         <div class="thumbnail-info pictos" data-list-to-list-action="toggle" data-list-to-list-name="favourites" data-list-to-list-item-id="3">S</div>
         <h3>Scrum Master Agile Greenfield Finance .net</h3>   
-        <p class="rate">350-500/day</p> 
+        <p class="rate">350-500GBP/day</p> 
         <p class="location-and-posted">Warwickshire (3 days ago)</p> 
       </div>
       <div class="thumbnail thumbnail-219">  
         <div class="thumbnail-info pictos" data-list-to-list-action="toggle" data-list-to-list-name="favourites" data-list-to-list-item-id="3">S</div>
         <h3>C# .Net Developer, Investment Bank, Equity Trading</h3>   
-        <p class="rate">550-550/day</p> 
+        <p class="rate">550-550GBP/day</p> 
         <p class="location-and-posted">London (3 days ago)</p> 
       </div>      
     </div>
@@ -374,8 +401,12 @@
        
   	<script src="http://code.jquery.com/jquery-1.7.2.js"></script>
   	<script src="./javascripts/vendor/tiny-pub-sub.js"></script>
+
   	<script src="./javascripts/application/model.js"></script>
   	<script src="./javascripts/application/view.js"></script>
   	<script src="./javascripts/application/page.js"></script>
+    <div id="no-script">
+      JavaScript must be enabled to use this website.
+    </div>
   </body>
 </html>

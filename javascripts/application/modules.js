@@ -12,3 +12,8 @@
 	
 	mod.TemplateServerSvc = new invertebrate.TemplateServerSvc(wizerati.mod("config").Config);
 }(wizerati.mod("templates")));
+
+(function (mod) {
+	
+	mod.SearchService = new wizerati.SearchService();
+}(wizerati.mod("services")));

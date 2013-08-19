@@ -1,12 +1,14 @@
-//order of declaration matters here
+"use strict";
+
+//builds "namespaces" (or "modules", hence "mod") 
+//of objects for use by the application.
+//order of declaration matters here.
 (function (mod) {
-	"use strict";
 
-	mod.Config = new todoApp.Config(invertebrate.env.dev);
-}(todoApp.mod("config")));
+	mod.Config = new wizerati.Config(invertebrate.env.dev);
+}(wizerati.mod("config")));
 
 (function (mod) {
-	"use strict";
-
-	mod.TemplateServerSvc = new invertebrate.TemplateServerSvc(todoApp.mod("config").Config);
-}(todoApp.mod("templates")));
+	
+	mod.TemplateServerSvc = new invertebrate.TemplateServerSvc(wizerati.mod("config").Config);
+}(wizerati.mod("templates")));

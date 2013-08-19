@@ -3,13 +3,13 @@
 jQuery(document).ready(function () {    
     //app.app = new app.ListToListView(new app.ListToListModel("favourites"));
 
-    self.wizeratiApp.instance = new wizeratiApp.App(invertebrate.env.dev);
-	self.wizeratiApp.instance.searchForm = new wizeratiApp.SearchFormView(new wizeratiApp.SearchFormModel());
-	self.wizeratiApp.instance.favouritesCube = new wizeratiApp.FavouritesCubeView(new wizeratiApp.FavouritesCubeModel());
-	self.wizeratiApp.instance.searchResults = new wizeratiApp.SearchResultsView(new wizeratiApp.SearchResultsModel());
-	self.wizeratiApp.instance.itemsOfInterestResults = new wizeratiApp.ItemsOfInterestView(new wizeratiApp.ItemsOfInterestModel());	
-	self.wizeratiApp.instance.router = new invertebrate.Router();
-	self.wizeratiApp.instance.registerRoutes();
+    window.wizerati.instance = new wizerati.App(invertebrate.env.dev);
+	//self.wizerati.instance.searchForm = new wizerati.SearchFormView(new wizerati.SearchFormModel());
+	//self.wizerati.instance.favouritesCube = new wizerati.FavouritesCubeView(new wizerati.FavouritesCubeModel());
+	//self.wizerati.instance.searchResults = new wizerati.SearchResultsView(new wizerati.SearchResultsModel());
+	//self.wizerati.instance.itemsOfInterest = new wizerati.ItemsOfInterestView(new wizerati.ItemsOfInterestModel());	
+	//self.wizerati.instance.router = new invertebrate.Router();
+	//self.wizerati.instance.registerRoutes();
 }); 
 
 

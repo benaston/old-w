@@ -1,13 +1,3 @@
-/************cube***************************/
-
-
-@font-face {
-font-family: museo-sans-500;
-src: url("./museo-sans-500.woff");
-font-weight: normal;
-font-style: normal;
-}
-
 footer {
 clear: both;
 top: 106px;
@@ -18,8 +8,6 @@ text-align: center;
 figure {
 margin: 0; /*important to ensure rotational origin is centered*/
 }
-
-
 
 .cube-container {
 width: 260px;

@@ -52,3 +52,6 @@ overflow: visible !important;
 .overflow-hidden {
 overflow: hidden !important;
 }
+.in-page-anchor-target {
+position:relative;top:0;
+}

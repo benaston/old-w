@@ -32,10 +32,10 @@
 				that.Model.setLocation($location.val(), { silent: true });
 			});
 
-			// var $rate = that.$el.find("#location");
-			// $location.live('change', function () {
-			// 	that.Model.setLocation($location.val(), { silent: true });
-			// });
+			var $rate = that.$el.find("input[name='r']");
+			$rate.live('change', function () {
+				that.Model.setRate(that.$el.find("input[name='r']:checked").val(), { silent: true });
+			});
 
 			var $searchButton = that.$el.find("#btn-search");
 			$searchButton.live('click', function (e) { 

@@ -1,16 +1,16 @@
 (function (app) {
-	function TodoCreationFormModel() {
+	function FooModel() {
 		"use strict";
 
-		if (!(this instanceof app.TodoCreationFormModel)) {
-			return new app.TodoCreationFormModel(); 
+		if (!(this instanceof app.FooModel)) {
+			return new app.FooModel(); 
 		}
 
 		var that = this, 
 		    _title = null, 
 			_description = null;
 
-		this.updateEventUri = "update://todoCreationForm/";
+		this.updateEventUri = "update://SearchFormModel/";
 
 		this.setTitle = function (value, options) {
 			options = options || { silent:false };

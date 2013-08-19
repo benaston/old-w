@@ -12,7 +12,7 @@
 
 		var that = this, _configSvc = null;
 
-		this.serverUriSelectionFunc = function () { return "./example/templateServer/"; }; //see note 1
+		this.serverUriSelectionFunc = function () { return "./template-server/"; }; //see note 1
 
 		this.metadata = {}; //scripts register themselves in here
 

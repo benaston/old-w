@@ -62,7 +62,7 @@ box-shadow: 1px 3px 0px 0px rgba(255, 200, 0, 0.3);
 }
 
 .thumbnail.selected:before {
-box-shadow: 1px 3px 0px 0px rgba(255, 200, 0, 0.3);
+box-shadow: 1px 5px 0px 0px rgba(0, 109, 204, 1);
 }
 
 .thumbnail:after {
@@ -86,7 +86,7 @@ box-shadow: -1px -3px 0px 0px rgba(255, 200, 0, 0.3);
 }
 
 .thumbnail.selected:after {
-box-shadow: -1px -3px 0px 0px rgba(255, 200, 0, 0.3);
+box-shadow: -1px -5px 0px 0px rgba(0, 109, 204, 1);
 }
 
 .thumbnail.edit:before {

@@ -18,11 +18,12 @@
         #no-script{display:block !important;}
       </style>
     </noscript> 
-  </head>
-  <body class="lucid-app-wrapper">  
+  </head>  
+  <body class="lucid-app-wrapper">      
     <div class="lucid-panel-absolute-full-height search-panel overflow-visible">      
       <div id="search-form">
       </div>
+      
       <section class="favourite-items cube-container">        
         <input id="f-t" name="favourites-panel" type="radio" checked="checked">  
         <input id="f-l" name="favourites-panel" type="radio">  
@@ -82,7 +83,7 @@
           <figure class="top"> 
             <div class="favourites" data-list-to-list-destination-name="favourites" ondrop="drop(event)" ondragover="allowDrop(event)"> 
               <div class="hover" data-list-to-list-item-id="1"> 
-                <div class="thumbnail thumbnail-108"> 
+                <div class="thumbnail thumbnail-108 selected"> 
                   <h3>C# Developer / Technical Lead</h3>
                   <h4>475-500 GBP/day</h4>
                   <h4>London</h4>
@@ -132,8 +133,8 @@
           Wizerati. &copy; Ben Aston 2013 
         </div>
     </div>
-    <div class="lucid-panel-absolute-full-height results-panel overflow-y-scroll">
-      <div class="thumbnail thumbnail-219">  
+    <div class="lucid-panel-absolute-full-height results-panel overflow-y-auto">
+      <div class="thumbnail thumbnail-219 selected">  
         <div class="thumbnail-info pictos" data-list-to-list-action="toggle" data-list-to-list-name="favourites" data-list-to-list-item-id="1">S</div>
         <h3>C# Developer / Technical Lead</h3>   
         <p class="rate">475-550 GBP/day</p> 
@@ -249,9 +250,8 @@
       </article>
       <article class="selected-item overflow-y-scroll lucid-column">
           <section class="menu">
-			<ul class="pips reset">
-				<!-- add "current" class as apropriate -->
-				<li><a class="current" href="#">Pinned Item 1</a></li>
+			<ul class="pips reset">				
+				<li><a href="#">Pinned Item 1</a></li>
 				<li><a href="#">Pinned Item 2</a></li>
 				<li><a href="#">Pinned Item 3</a></li>
 				<li><a href="#">Pinned Item 4</a></li>

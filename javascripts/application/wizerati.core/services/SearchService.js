@@ -11,7 +11,7 @@
 
 		this.runSearch = function (options) {
 			var defaults = {
-					searchResourceUri:	"./items?q=",
+					searchUri:	"./items?q=",
 					keywords: null,
 					filterModel: null,
 					pre: function () { },
@@ -23,7 +23,7 @@
 			
 			//if(options.pre) { options.pre(); }
 
-			$.ajax({ url: options.searchResourceUri, success: success, cache: false });
+			$.ajax({ url: options.searchUri, success: success, cache: false });
 		};
 
 		function init() {

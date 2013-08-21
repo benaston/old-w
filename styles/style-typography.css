@@ -31,41 +31,80 @@ font-weight: normal;
 font-style: normal;
 }
 
+@font-face {
+font-family: proxima-nova-100;
+src: url("../fonts/proxima-nova-100.woff");
+font-weight: normal;
+font-style: normal;
+}
+
+@font-face {
+font-family: proxima-nova-200;
+src: url("../fonts/proxima-nova-200.woff");
+font-weight: normal;
+font-style: normal;
+}
+
+@font-face {
+font-family: proxima-nova-300;
+src: url("../fonts/proxima-nova-300.woff");
+font-weight: normal;
+font-style: normal;
+}
+
+@font-face {
+font-family: proxima-nova-400;
+src: url("../fonts/proxima-nova-400.woff");
+font-weight: normal;
+font-style: normal;
+}
+@font-face {
+font-family: proxima-nova-500;
+src: url("../fonts/proxima-nova-500.woff");
+font-weight: normal;
+font-style: normal;
+}
+
 body {
-font-family: "museo-sans-500", Arial, sans-serif;
-font-size: .95em;
+font-family: "proxima-nova-400", Arial, sans-serif;
+font-size: 1bem;
 line-height: 1.3em;
 color: #333333;
 -webkit-font-smoothing: antialiased;
 }
 
-h2 {
+h1, h2, h3, h4, h5, h6 {
 clear:both;
 -webkit-user-select:auto;
-}
- h1, h2, h3, h4, h5, h6 {
-margin: 10px 0;
-font-family: inherit;
-font-weight: bold;
-line-height: 20px;
-color: inherit;
 text-rendering: optimizelegibility;
 }
-h1, h2 {
-line-height: 40px;
-}
-h3 {
-line-height: 21px;
-}
+
 h1 {
+margin: 10px 0;
+line-height: 40px;
 font-size: 1.7em;
+font-family: "proxima-nova-100";
 }
+
 h2 {
+margin: 10px 0;
+line-height: 40px;
 font-size:1.1em;
+font-family: proxima-nova-300;
 }
+
 h3 {
-font-size:.9em;
+margin: 10px 0;
+line-height: 21px;
+font-size:1em;
 color: #999;
+font-family: "proxima-nova-300";
+}
+
+h4, h5, h6 {
+margin: 10px 0;
+line-height: 20px;
+font-family: "proxima-nova-400";
 }
 
 hr {

@@ -112,6 +112,8 @@ top:25px;
 input[type="radio"]:checked + label {
 background-color: rgba(0,109,204,0.95);
 color: white;
+box-shadow: 0 0 0 0px rgba(255, 255, 255, 1), 0 0 0 2px rgba(0, 109, 204, 1) !important;
+border: 2px solid white;
 }
 .search-filters label {
 font-size:14px;
@@ -170,7 +172,8 @@ width: 8px;
 height: 8px;
 }
 .items-of-interest-panel > article:nth-child(2) .pips > li:nth-child(1) > a {
-background-color: rgba(0,109,204,0.95);/*#D2D2D2;*/
+background-color: rgba(0,109,204,0.95);
+box-shadow: 0 0 0 1px rgba(255, 255, 255, 1), 0 0 0 2px rgba(0, 109, 204, 1) !important;
 }
 .cube-face-labels {
   font-weight:bold;
@@ -192,4 +195,5 @@ border-right: 2px solid #eee;
 button.checked {
 background-color: rgba(0,109,204,0.95);
 color: white;
+box-shadow: 0 0 0 2px rgba(255, 255, 255, 1), 0 0 0 4px rgba(0, 109, 204, 1) !important;
 }

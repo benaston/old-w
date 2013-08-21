@@ -39,9 +39,9 @@
 
 			var $searchButton = that.$el.find("#btn-search");
 			$searchButton.live('click', function (e) { 
-				// todoApp.instance.todoList.Model.addTodo(new todoApp.TodoModel(that.$el.find(".title").val(), that.$el.find(".description").val()));
-				// todoApp.instance.todoCreationForm.Model.setTitle("");
-				// todoApp.instance.todoCreationForm.Model.setDescription("");
+				// app.instance.searchSearchService.runSearch({ searchUri: uri, 
+				// 											 keywords: keywords, 
+				// 											 filterModel: filterModel });				
 
 				return false;
 			});			

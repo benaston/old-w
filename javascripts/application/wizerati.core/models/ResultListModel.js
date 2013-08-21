@@ -1,20 +1,28 @@
 (function (app) {
 	"use strict";
 
-	function TodoListModel() {
-		if (!(this instanceof app.TodoListModel)) {
-			return new app.TodoListModel();
+	function ResultListModel() {
+		if (!(this instanceof app.ResultListModel)) {
+			return new app.ResultListModel();
 		}
 
-		var that = this;
+		var that = this, 
+					_selectedResultId = null;
 
-		this.updateEventUri = "update://todoList/";
-		this.deleteEventUri = "delete://todoList/";
+		this.updateEventUri = "update://ResultList/";
+		this.deleteEventUri = "delete://ResultList/";
 		that.resourceName = "todoList";
-		this.todos = [];
+		this.results = [];
 
-		this.getTodo = function (id) {
-			return _.filter(that.todos, function (i) { return i.id === id; })[0];
+		//return _.filter(that.todos, function (i) { return i.id === id; })[0];
+		this.getSelectedResultId = function (id) {
+			return that._selectedResultId;
+		};
+
+		this.setSelectedResultId = function (id) {
+			that._selectedResultId = id;
+
+			$.publish(that.updateEventUri);
 		};
 
 		this.addTodo = function (todo, options) {

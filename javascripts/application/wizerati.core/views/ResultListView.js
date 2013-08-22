@@ -8,16 +8,21 @@
 		}
 
 		var that = this,
-			_el = ".results-panel",
+			_el = "#result-list-panel",
 			_templateName = "result-list.html";
 
 		this.$el = $(_el);
 		this.Model = null;
 
+		//note how this does not have a template of its own, but delegates
+		//gets a bunch of items to render themselves, via the application router
 		this.render = function (options) {
 			options = options || { done: that.postRender };
 
-			return app.instance.renderTemplate(that.$el, _templateName, that.Model, options);
+			that.$el.empty();
+			$.each(that.Model.results, function (index, value) {
+				app.instance.router.route(value, { $parentDomNode: that.$el });
+			});
 		};
 
 		this.postRender = function () {

@@ -1,13 +1,15 @@
 "use strict";
 
 (function (app) {
-	function SearchService() {
+	//todo: split authorization and authentication?
+	function SearchService(loginService) {
 
 		if (!(this instanceof app.SearchService)) {
 			return new app.SearchService(); 
 		}
 
-		var that = this;		
+		var that = this, 
+			_logInService = null;		
 
 		this.runSearch = function (options) {
 			var defaults = {
@@ -26,7 +28,17 @@
 			$.ajax({ url: options.searchUri, success: success, cache: false });
 		};
 
+		function success(data) {
+			if(_logInService.getCurrentRole() === _roleEnum.Role1) {
+				app.instance.ResultList.Model.
+			}
+		}
+
 		function init() {
+			if(!loginService) { throw "logInService not supplied." };
+
+			that._logInService = logInService;
+
 			return that;
 		}
 

@@ -10,15 +10,16 @@
 		var	that = this,
 			devConfig =  {
 				wizeratiUri: "/",
-				templateServerUris: [ "/template-server/" ]
+				templateServerUris: [ "/contract/", "/contractor/" ]
 			},
 			prodConfig = {
-				wizeratiUri: "http://www.github.com/benaston/wizerati/template-server/"
+				wizeratiUri: "https://www.wizerati.com/"
+				templateServerUris: [ "https://contract.croni.cl/", "https://contractor.croni.cl/" ]
 			},
 			sharedConfig = {
 				templatesUriPart: "templates/",
-				templatePostRenderScriptsUriPart: "templatePostRenderScripts/",
-				metadataUriPart: "config/metadata"
+				templatePostRenderScriptsUriPart: "template-post-render-scripts/",
+				metadataUriPart: "metadata"
 			};
 
 		function init() {

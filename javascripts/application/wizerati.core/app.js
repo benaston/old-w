@@ -9,15 +9,12 @@
 		var that = this;
 
 		this.registerRoutes = function() {
-			that.router.registerRoute(app.TodoModel.prototype.constructor.name, function (model, options) {
-				options = options || { $parentDomNode: $('body') };
-				//new todoApp.TodoView(model).render({ done: function ($el) { options.$parentDomNode.append($el); } });
-			});
 
-			that.router.registerRoute(app.ChoreModel.prototype.constructor.name, function (model, options) {
+			that.router.registerRoute(app.ResultModel.prototype.constructor.name, function (model, options) {
 				options = options || { $parentDomNode: $('body') };
-				//new todoApp.ChoreView(model).render({ done: function ($el) { options.$parentDomNode.append($el); } });
+				new wizerati.ResultView(model).render({ done: function ($el) { options.$parentDomNode.append($el); } });
 			});
+			
 		};
 
 		function init() {

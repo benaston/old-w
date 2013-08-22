@@ -1,0 +1,58 @@
+<form name="search-form">
+	<input type="button" id="btn-search" class="btn btn-80 btn-primary" alt="Search" title="Search" value="s"> 
+    <div class="search-fields"> 
+      <input id="keywords" name="keywords" class="field" pattern="[0-9]{13,16}" required="required" placeholder="Keywords..." tabindex="1" autocorrect="off" autocapitalize="none" type="text"> 
+      <input id="location" name="location" class="field" pattern="[0-9]{13,16}" required="required" placeholder="Location..." tabindex="2" autocorrect="off" autocapitalize="none" type="text"> 
+    </div> 
+    <div class="search-filters"> 
+      <span class="gray">Maximum rate (GBP)</span> 
+      <table> 
+        <tbody><tr>                  
+          <td> 
+            <input id="r350" name="r" type="radio" value="<350"> 
+            <label for="r350">350</label>              
+          </td> 
+          <td> 
+            <input id="r450" name="r" type="radio" value="<450"> 
+            <label for="r450">450</label> 
+          </td> 
+          <td> 
+            <input id="r550" name="r" type="radio" value="<550"> 
+            <label for="r550">550</label> 
+          </td> 
+          <td> 
+            <input id="r650" name="r" type="radio" value="<650"> 
+            <label for="r650">650</label> 
+          </td> 
+          <td> 
+            <input id="r750+" name="r" type="radio" value="750+"> 
+            <label for="r750+">750+</label> 
+          </td> 
+          <td> 
+            <input id="r850" name="r" type="radio" value="850">                                        
+          </td> 
+        </tr>  
+        <tr>                                     
+          <td> 
+            <input id="r400" name="r" type="radio" value="<400"> 
+            <label for="r400">400</label> 
+          </td> 
+          <td> 
+            <input id="r500" name="r" type="radio" value="<500"> 
+            <label for="r500">500</label> 
+          </td> 
+          <td> 
+            <input id="r600" name="r" type="radio" value="<600"> 
+            <label for="r600">600</label> 
+          </td> 
+          <td> 
+            <input id="r700" name="r" type="radio" value="<700"> 
+            <label for="r700">700</label> 
+          </td> 
+          <td> 
+            <input id="r800+" name="r" type="radio" value=">800"> 
+          </td>          
+        </tr>                
+      </tbody></table>       
+    </div> 
+</form>

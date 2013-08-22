@@ -1,0 +1,12 @@
+<% try { %>
+	<% console.log(model) %>
+	
+	<div class="thumbnail-info pictos" data-list-to-list-action="toggle" data-list-to-list-name="favourites" data-list-to-list-item-id="2">S</div>
+	<h3><%= model.title %></h3>   
+	<p class="rate"><%= model.rate %> GBP/day</p> 
+	<p class="location-and-posted"><%= model.location %> (<%= model.lastUpdated %>)</p> 
+	
+<% 
+} catch(e) { 
+	throw "template exception: searchResult. " + e;
+}%>

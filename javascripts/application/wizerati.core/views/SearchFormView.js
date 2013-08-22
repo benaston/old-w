@@ -37,11 +37,13 @@
 				that.Model.setRate(that.$el.find("input[name='r']:checked").val(), { silent: true });
 			});
 
+			//todo: this to be connected using the post render code
+			//downloaded from the template server.
+			//search service then to instantiate Result models based 
+			//upon the role of the user
 			var $searchButton = that.$el.find("#btn-search");
 			$searchButton.live('click', function (e) { 
-				// app.instance.searchSearchService.runSearch({ searchUri: uri, 
-				// 											 keywords: keywords, 
-				// 											 filterModel: filterModel });				
+				 app.instance.searchService.runSearch({ keywords: keywords, filterModel: filterModel });				
 
 				return false;
 			});			

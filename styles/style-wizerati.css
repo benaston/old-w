@@ -1,18 +1,19 @@
 .is-selected {
 color: gold !important;    
 }     
-.results-panel {
+#result-list-panel {
 width:275px;
 left: 382px;
 padding: 0 10px 0 10px;       
 }
-.items-of-interest-panel {
-left:675px;
-}
-.search-panel{
+#search-panel{
 left:0;
 width:300px;
 }
+.items-of-interest-panel {
+left:675px;
+}
+
 .selected-item {
 border-radius: 15px;
 padding: 0px 15px 0px 18px;

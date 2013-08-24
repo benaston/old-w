@@ -2,14 +2,14 @@
 
 (function (app) {
 	//todo: split authorization and authentication?
-	function SearchService(loginService) {
+	function SearchService(resultModelFactory) {
 
 		if (!(this instanceof app.SearchService)) {
 			return new app.SearchService(); 
 		}
 
-		var that = this, 
-			_logInService = null;		
+		var that = this, 			
+			_resultModelFactory = null;		
 
 		this.runSearch = function (options) {
 			var defaults = {
@@ -17,7 +17,7 @@
 					keywords: null,
 					filterModel: null,
 					pre: function () { },
-					success: function () { }, //function(data)
+					success: function () { }, //function(data) - instantiate the relevant models from the json for use by the application 
 					error: function (e) { throw "runSearch error: " + e; }
 			};
 			
@@ -29,15 +29,22 @@
 		};
 
 		function success(data) {
-			if(_logInService.getCurrentRole() === _roleEnum.Role1) {
-				app.instance.ResultList.Model.
-			}
+			if (!data) { throw "data not supplied"; }
+			
+			var results = $.parseJSON(data);
+			var resultModels = [];
+
+			_.each(results, function(r) {
+				resultModels.push(_modelFactory.create(r));
+			});
+
+			app.instance.ResultList.Model.setResults(resultModels);
 		}
 
 		function init() {
-			if(!loginService) { throw "logInService not supplied." };
+			if(!resultModelFactory) { throw "resultModelFactory not supplied." };
 
-			that._logInService = logInService;
+			that._resultModelFactory = resultModelFactory;
 
 			return that;
 		}

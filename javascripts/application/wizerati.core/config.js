@@ -10,11 +10,16 @@
 		var	that = this,
 			devConfig =  {
 				wizeratiUri: "/",
-				templateServerUris: [ "/contract/", "/contractor/" ]
+				templateServerUris: { 
+									  "1": "./contract/", 
+									  "2": "./contractor/",
+									  "3": "./contract/", 
+									  "4": "./contractor/" 
+									}
 			},
 			prodConfig = {
-				wizeratiUri: "https://www.wizerati.com/"
-				templateServerUris: [ "https://contract.croni.cl/", "https://contractor.croni.cl/" ]
+				wizeratiUri: "https://www.wizerati.com/",
+				templateServerUris: { Contractor: "https://contract.croni.cl/", Employer: "https://contractor.croni.cl/" }
 			},
 			sharedConfig = {
 				templatesUriPart: "templates/",

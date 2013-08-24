@@ -1,27 +1,52 @@
 "use strict";
 
 (function (app) {
-	function LogInService(configSvc) {
+	function LogInService(configService, cookieService) {
 
 		if (!(this instanceof app.LogInService)) {
 			return new app.LogInService(configSvc); 
 		}
 
-		var that = this, _configSvc = null, _role = null;	
+		var that = this, _configSvc = null, _cookieService = null, _roleEnum = null;	
 
-		this.login = function (username, password) {
-			if(!username) {throw "username not supplied"; }
-			if(!password) {throw "password not supplied"; }
+		this.logIn = function (options) {
+			if(!options.username &&  !options.role) {throw "username not supplied"; }
+			if(!options.password &&  !options.role) {throw "password not supplied"; }
 
-			if(authenticate(username, password)) {
-				that._role = authorize(username);
+			if(options.role) {
+				that._cookieService.setAuthorizationCookie(options.role);
+				initializeUI();
+
+				return;
+			} else {
+				if(authenticate(options.username, options.password)) {			
+					that._cookieService.setAuthorizationCookie(options.role);
+					initializeUI();
+
+					return;
+				}
 			}
-
+			
 			throw "authentication failed.";
 		};
 
+		function initializeUI() {
+			self.wizerati.instance.searchForm = new wizerati.SearchFormView(new wizerati.SearchFormModel());
+			self.wizerati.instance.resultList = new wizerati.ResultListView(new wizerati.ResultListModel());
+			app.instance.logInForm.Model.setIsVisible(false);
+		}
+
 		this.getCurrentRole = function () {
-			return that._role;
+			var cookie = that._cookieService.getAuthorizationCookie();
+			
+			if (cookie !== that._roleEnum.Contractor && cookie !== that._roleEnum.Employer && 
+				cookie !== that._roleEnum.ContractorStranger && cookie !== that._roleEnum.EmployerStranger ){
+
+				throw "invalid role found in cookie '" + cookie + "'";
+				
+			} else {
+				return cookie;
+			}
 		};
 
 		function authenticate(username, password) {
@@ -30,18 +55,29 @@
 
 		function authorize(username) {
 			if(username == "ben") {
-				return that._role = that._roleEnum.RoleOne;
+				return that._role = that._roleEnum.Contractor;
 			} else if(username == "sally") {
-				return that._role = that._roleEnum.RoleTwo;
+				return that._role = that._roleEnum.Employer;
 			} 
 
 			throw "unauthorized.";
 		}
 
+		//gets the value of a cookie by name
+		//see: http://stackoverflow.com/questions/10730362/javascript-get-cookie-by-name
+		function getCookieValue(name) {
+	  		var parts = document.cookie.split(name + "=");
+	  		if (parts.length == 2) return parts.pop().split(";").shift();
+		}
+
 		function init() {
-			if (!configSvc) { throw "configSvc not supplied"; }
+			if (!configService) { throw "configService not supplied"; }
+			if (!cookieService) { throw "cookieService not supplied"; }
+
+			that._roleEnum = wizerati.mod("enum").UserRole;
 			
-			that._configSvc = configSvc;
+			that._configService = configService;
+			that._cookieService = cookieService;
 
 			return that;
 		}

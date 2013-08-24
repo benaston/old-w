@@ -19,11 +19,10 @@
       </style>
     </noscript> 
   </head>  
-  <body class="lucid-app-wrapper">      
+  <body class="lucid-app-wrapper login">          
     <div id="search-panel" class="lucid-panel-absolute-full-height overflow-visible">      
       <div id="search-form">
-      </div>
-      
+      </div>      
       <section class="favourite-items cube-container">        
         <input id="f-t" name="favourites-panel" type="radio" checked="checked">  
         <input id="f-l" name="favourites-panel" type="radio">  
@@ -310,9 +309,38 @@
       </article>
     </div>
 
+    <div class="login-panel three-d-context" id="login-panel">
+      <div class="front">
+        <a class="welcome">log in</a>
+        <h1>hello.</h1>
+        <p>Welcome to <strong>Wizerati</strong>: a search engine for IT contracts and IT talent.</p>            
+        <p>I am an...</p>
+     
+        <div class="login-buttons an-it-contractor">
+          <a href="">IT contractor</a>
+          <label id="btn-it-contractor" class="btn-primary btn btn-80" alt="IT contractor" title="IT contractor">U</label>
+        </div>
+        <div class="login-buttons an-employer">
+          <a>employer</a>
+          <label id="btn-employer" class="btn btn-80" alt="Employer" title="Employer">U</label>
+        </div>
+            
+      </div>
+      <div class="back">
+        <a class="back-to-welcome">back to welcome</a>
+        <h1>log in</h1>
+        <ul class="log-in-options">
+        <li><a>Log in via GitHub</a></li>
+        <li><a>Log in via Twitter</a></li>
+        <li><a>Log in via LinekdIn</a></li>
+        </ul>
+      </div>
+    </div>
+
     <script src="http://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.3.3/underscore-min.js"></script>
   	<script src="http://code.jquery.com/jquery-1.7.2.js"></script>
-  	<script src="./javascripts/vendor/tiny-pub-sub.js"></script>
+    <script src="./javascripts/vendor/tiny-pub-sub.js"></script>
+  	<script src="./javascripts/vendor/_cookie.js"></script>
 
   	<script src="./javascripts/vendor/invertebrate.js/arrayItemMove.js"></script>
     <script src="./javascripts/vendor/invertebrate.js/invertebrate.js"></script>
@@ -326,11 +354,28 @@
 
     <script src="./javascripts/application/wizerati.js"></script>
     
+    <script src="./javascripts/application/wizerati.core/services/CroniclService.js"></script>    
+    <script src="./javascripts/application/wizerati.core/services/LogInService.js"></script>    
     <script src="./javascripts/application/wizerati.core/services/SearchService.js"></script>    
+    <script src="./javascripts/application/wizerati.core/services/CookieService.js"></script>    
 
     <script src="./javascripts/application/wizerati.core/config.js"></script>
+
     <script src="./javascripts/application/wizerati.core/models/SearchFormModel.js"></script> 
+    <script src="./javascripts/application/wizerati.core/models/ContractModel.js"></script> 
+    <script src="./javascripts/application/wizerati.core/models/ContractorModel.js"></script> 
+    <script src="./javascripts/application/wizerati.core/models/ResultListModel.js"></script> 
+    <script src="./javascripts/application/wizerati.core/models/ResultModel.js"></script> 
+    <script src="./javascripts/application/wizerati.core/models/LogInFormModel.js"></script> 
+
     <script src="./javascripts/application/wizerati.core/views/SearchFormView.js"></script> 
+    <script src="./javascripts/application/wizerati.core/views/ResultListView.js"></script> 
+    <script src="./javascripts/application/wizerati.core/views/SearchFormView.js"></script> 
+    <script src="./javascripts/application/wizerati.core/views/ContractView.js"></script> 
+    <script src="./javascripts/application/wizerati.core/views/ContractorView.js"></script> 
+    <script src="./javascripts/application/wizerati.core/views/LogInFormView.js"></script> 
+    
+    <script src="./javascripts/application/wizerati.core/factories/ResultModelFactory.js"></script> 
 
     <script src="./javascripts/application/modules.js"></script>
     <script src="./javascripts/application/wizerati.core/app.js"></script>

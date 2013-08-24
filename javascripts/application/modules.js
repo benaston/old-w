@@ -6,8 +6,10 @@
 (function (mod) {
 
 	mod.UserRole = {
-		RoleOne: "1",
-		RoleTwo: "2"	
+		Contractor: "1",
+		Employer: "2",	
+		ContractorStranger: "3",
+		EmployerStranger : "4"	
 	};
 	
 }(wizerati.mod("enum")));
@@ -20,12 +22,15 @@
 }(wizerati.mod("config")));
 
 (function (mod) {
-	mod.LogInService = new wizerati.LogInService(wizerati.mod("config").Config);
-	mod.SearchService = new wizerati.CroniclService(wizerati.mod("config").Config); //pass in login service instead?
-	mod.SearchService = new wizerati.SearchService();
+	mod.CookieService = new wizerati.CookieService();
+	mod.LogInService = new wizerati.LogInService(wizerati.mod("config").Config, mod.CookieService);
+	mod.CroniclService = new wizerati.CroniclService(mod.LogInService, wizerati.mod("config").Config); //pass in login service instead?
+	mod.ResultModelFactory = new wizerati.ResultModelFactory(mod.LogInService);
+	mod.SearchServiceFunc = new wizerati.SearchService(mod.ResultModelFactory);
 }(wizerati.mod("services")));
 
 (function (mod) {
 	
-	mod.TemplateServerSvc = new invertebrate.TemplateServerSvc(wizerati.mod("config").Config, wizerati.mod("services").CroniclService.getCroniclUri);
+	mod.TemplateServerSvc = new invertebrate.TemplateServerSvc(wizerati.mod("config").Config, 
+		wizerati.mod("services").CroniclService.getCroniclUri);
 }(wizerati.mod("templates")));

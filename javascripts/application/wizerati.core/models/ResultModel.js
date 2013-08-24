@@ -48,4 +48,4 @@
 	app.ResultModel = ResultModel;
 	invertebrate.Model.isExtendedBy(app.ResultModel);
 
-}(todoApp));
+}(wizerati));

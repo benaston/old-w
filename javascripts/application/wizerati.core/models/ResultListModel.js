@@ -7,13 +7,20 @@
 		}
 
 		var that = this, 
-					_selectedResultId = null;
+				   _selectedResultId = null;
 
 		this.updateEventUri = "update://ResultList/";
 		this.deleteEventUri = "delete://ResultList/";
 		that.resourceName = "todoList";
 		this.results = [];
 		
+		this.setResults = function (results) {
+			
+			that._results = results;
+
+			$.publish(that.updateEventUri);
+		};
+
 		this.getResult = function (id, options) {
 			if (!id) { throw "id not supplied"; }
 			
@@ -48,7 +55,17 @@
 			$.publish(that.deleteEventUri);
 		};
 		
-		function init() {
+		this.render = function (options) {
+			options = options || { done: that.postRender };
+
+			that.$el.empty();
+			$.each(that.Model.results, function (index, model) {
+				app.instance.router.route(model, { $parentDomNode: that.$el });
+			});
+		};
+
+		function init() {			
+
 			return that;
 		}
 

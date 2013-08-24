@@ -48,9 +48,8 @@
 		}
 
 		return init();
-
 	}
 
 	app.ResultListView = ResultListView;
-	wizerati.View.isExtendedBy(app.ResultListView);
+	invertebrate.View.isExtendedBy(app.ResultListView);
 }(wizerati));

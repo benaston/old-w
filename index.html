@@ -19,10 +19,10 @@
       </style>
     </noscript> 
   </head>  
-  <body class="lucid-app-wrapper">
+  <body class="lucid-app-wrapper greenfield">
     <div id="search-panel" class="lucid-panel-absolute-full-height overflow-visible">
-      <div id="search-form" class="initial">
-      </div>      
+      <div id="search-form">
+      </div>
       <section class="favourite-items cube-container hide">
         <input id="f-t" name="favourites-panel" type="radio" checked="checked">  
         <input id="f-l" name="favourites-panel" type="radio">  
@@ -125,12 +125,15 @@
           <li for="f-back">My Job Search (Untitled)</li> 
         </ol> 
       </section>
+      <div class="navbar-login">
+        <a class="btn-log-in" href="#">log in</a>
+      </div>
       <div class="navbar"> 
         <a class="btn-my-account" href="#">my account</a> | <a class="btn-log-out" href="#">log out</a>
       </div>
       <div class="legal">
           wizerati. &copy; ben aston 2013 | <a class="btn-advertisers" href="#">advertisers</a>
-          <div id="advertiser-help">Advertisers start here</div>
+          <a href="#" id="advertiser-help">Advertisers start here</a>
       </div>
     </div>
     <ul id="result-list-panel" class="lucid-panel-absolute-full-height overflow-y-auto hide">
@@ -339,15 +342,13 @@
     <script src="./javascripts/application/wizerati.core/models/ContractorModel.js"></script> 
     <script src="./javascripts/application/wizerati.core/models/ResultListModel.js"></script> 
     <script src="./javascripts/application/wizerati.core/models/ResultModel.js"></script> 
-    <script src="./javascripts/application/wizerati.core/models/LogInFormModel.js"></script> 
 
     <script src="./javascripts/application/wizerati.core/views/SearchFormView.js"></script> 
     <script src="./javascripts/application/wizerati.core/views/ResultListView.js"></script> 
     <script src="./javascripts/application/wizerati.core/views/SearchFormView.js"></script> 
     <script src="./javascripts/application/wizerati.core/views/ContractView.js"></script> 
     <script src="./javascripts/application/wizerati.core/views/ContractorView.js"></script> 
-    <script src="./javascripts/application/wizerati.core/views/LogInFormView.js"></script> 
-    
+
     <script src="./javascripts/application/wizerati.core/factories/ResultModelFactory.js"></script> 
 
     <script src="./javascripts/application/modules.js"></script>

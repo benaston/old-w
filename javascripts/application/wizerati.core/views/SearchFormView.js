@@ -15,7 +15,7 @@
 		this.$el = $(_el);
 		this.Model = null;
 	
-		this.render = function (options) {
+		this.render = function (e, options) {
 			options = options || { done: that.postRender };
 
 			return app.instance.renderTemplate(that.$el, _templateName, that.Model, options);

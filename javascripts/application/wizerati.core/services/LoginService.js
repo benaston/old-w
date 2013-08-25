@@ -24,7 +24,6 @@
 			} else {
 				if(authenticate(options.username, options.password)) {			
 					that._cookieService.setAuthorizationCookie(options.role);
-					initializeUI();
 
 					return;
 				}
@@ -32,12 +31,6 @@
 			
 			throw "authentication failed.";
 		};
-
-		function initializeUI() {
-			self.wizerati.instance.searchForm = new wizerati.SearchFormView(new wizerati.SearchFormModel());
-			self.wizerati.instance.resultList = new wizerati.ResultListView(new wizerati.ResultListModel());
-			app.instance.logInForm.Model.setIsVisible(false);
-		}
 
 		this.getCurrentRole = function () {
 			var cookie = that._cookieService.getAuthorizationCookie();

@@ -287,6 +287,9 @@ top: 45px;
 .cube-net label {
 margin: auto !important;
 border-radius: 0;
+height: 40px;
+width: 40px;
+border: 2px solid #eee;
 }
 
 .cube-face-labels {

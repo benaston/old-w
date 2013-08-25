@@ -9,7 +9,7 @@
 
 		var that = this, 
 					_loginService = null,
-					_config = null;	
+					_config = null;
 
 		this.getCroniclUri = function () {			
 			return that._config.config.templateServerUris[that._loginService.getCurrentRole()];

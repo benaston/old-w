@@ -7,7 +7,10 @@
 			return new app.LogInService(configSvc); 
 		}
 
-		var that = this, _configSvc = null, _cookieService = null, _roleEnum = null;	
+		var that = this,
+                   _configSvc = null,
+                   _cookieService = null,
+                   _roleEnum = null;
 
 		this.logIn = function (options) {
 			if(!options.username &&  !options.role) {throw "username not supplied"; }
@@ -39,14 +42,19 @@
 		this.getCurrentRole = function () {
 			var cookie = that._cookieService.getAuthorizationCookie();
 			
-			if (cookie !== that._roleEnum.Contractor && cookie !== that._roleEnum.Employer && 
-				cookie !== that._roleEnum.ContractorStranger && cookie !== that._roleEnum.EmployerStranger ){
+			if (cookie !== that._roleEnum.Contractor
+                && cookie !== that._roleEnum.Employer
+                && cookie !== that._roleEnum.ContractorStranger
+                && cookie !== that._roleEnum.EmployerStranger ){
 
 				throw "invalid role found in cookie '" + cookie + "'";
-				
-			} else {
-				return cookie;
+            }
+
+            if(cookie === "") {
+				return that._roleEnum.ContractorStranger;
 			}
+
+			return cookie;
 		};
 
 		function authenticate(username, password) {

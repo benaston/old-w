@@ -14,14 +14,13 @@
 
 		this.$el = $(_el);
 		this.Model = null;
-		
 
 	
-		this.render = function (options) {
+		this.render = function (e, options) {
 			options = options || { done: that.postRender };
 
 			if(that.Model.getIsVisible()) {
-				$('body').addClass('login');
+//				$('body').addClass('login');
 			} else {
 				$('body').removeClass('login');
 			}

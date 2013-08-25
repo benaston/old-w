@@ -123,6 +123,9 @@ padding: 0;
 width: 226px;
 }
 
+input[type="text"]:focus {
+border-bottom: 1px dashed rgba(0,109,204,0.95);;
+}
 .field {
 color: rgb(85, 85, 85);
 font-size: 1.2em !important;
@@ -187,16 +190,24 @@ box-shadow: 0 0 19px 12px rgba(200, 200, 200, .3);
 input[type="checkbox"], input[type="radio"] {
 display: none;
 }
-
+label {
+margin: 0;
+-webkit-user-select: none;
+cursor:pointer;
+display:block;
+}
 label {
 margin: 0;
 height: 40px;
 width: 40px;
-border-radius: 40px;
-line-height: 37px;
 border: 2px solid #eee;
 -webkit-user-select: none;
 text-align: center;
 cursor:pointer;
 display:block;
+}
+button.checked {
+    background-color: rgba(0,109,204,0.95);
+    color: white;
+    box-shadow: 0 0 0 2px rgba(255, 255, 255, 1), 0 0 0 4px rgba(0, 109, 204, 1) !important;
 }

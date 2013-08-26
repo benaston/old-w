@@ -1,0 +1,15 @@
+p{}
+a{}
+strong{
+	font-weight: bold;
+}
+em{
+	font-style: italic;
+}
+ol, ul{
+	padding: 0 0 0 2.50rem;
+}
+ol li{
+    list-style: decimal inside;
+    line-height: 2rem;
+}

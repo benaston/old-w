@@ -13,15 +13,15 @@
 		};
 		
 		function init() {
-			$(document).on('click', 'a:not([data-bypass])', function (evt) {
-				var href = $(this).attr('href');
-				var protocol = 'http//';
-
-				if (href.slice(protocol.length) !== protocol) {
-					evt.preventDefault();
-					that.route(href);
-				}
-			});
+//			$(document).on('click', 'a:not([data-bypass])', function (evt) {
+//				var href = $(this).attr('href');
+//				var protocol = 'http//';
+//
+//				if (href.slice(protocol.length) !== protocol) {
+//					evt.preventDefault();
+//					that.route(href);
+//				}
+//			});
 		}
 		
 		init();

@@ -1,9 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>  
+<head>
     <!-- Copyright Ben Aston 2013. All rights reserved. -->
-    <meta name="author" content="Ben Aston">  
+    <meta name="author" content="Ben Aston">
     <link rel="shortcut icon" href="./images/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" type="text/css" href="./styles/style-reset.css">
+    <link rel="stylesheet" type="text/css" href="./styles/style-reset-wizerati.css">
     <link rel="stylesheet" type="text/css" href="./styles/style-typography.css">
     <link rel="stylesheet" type="text/css" href="./styles/style-layout.css">
     <link rel="stylesheet" type="text/css" href="./styles/style-form-element.css">
@@ -12,351 +14,484 @@
     <link rel="stylesheet" type="text/css" href="./styles/style-cube.css">
     <link rel="stylesheet" type="text/css" href="./styles/style-wizerati.css">
     <noscript>
-      <style>        
-        body * {display:none !important;}
-        body {width:100%;}
-        #no-script{display:block !important;}
-      </style>
-    </noscript> 
-  </head>  
-  <body class="lucid-app-wrapper greenfield">
-    <div id="search-panel" class="lucid-panel-absolute-full-height overflow-visible">
-      <div id="search-form">
-      </div>
-      <section class="favourite-items cube-container hide">
-        <input id="f-t" name="favourites-panel" type="radio" checked="checked">  
-        <input id="f-l" name="favourites-panel" type="radio">  
-        <input id="f-f" name="favourites-panel" type="radio">  
-        <input id="f-r" name="favourites-panel" type="radio">  
-        <input id="f-bottom" name="favourites-panel" type="radio">  
-        <input id="f-back" name="favourites-panel" type="radio">            
-        <div class="cube-controls"> 
-          <table class="cube-net">  
-            <tbody> 
-              <tr>  
-                <td colspan="3">                     
-                  <label for="f-t"></label>  
-                </td>  
-              </tr> 
-              <tr> 
-                <td>                     
-                  <label for="f-l"></label>  
-                </td>             
-                <td>                     
-                  <label for="f-f"></label>  
-                </td> 
-                <td>  
-                  <label for="f-r"></label>  
-                </td>
-              </tr>   
-              <tr> 
-                <td colspan="3">  
-                  <label for="f-bottom"></label>  
-                </td>                    
-              </tr>           
-              <tr> 
-                <td colspan="3">  
-                  <label for="f-back"></label>  
-                </td>                    
-              </tr>           
-            </tbody> 
-          </table> 
-        </div> 
-        <div class="cube">          
-          <figure class="front"> 
-            <div class="favourites" ondrop="drop(event)" ondragover="allowDrop(event)">        
-            </div> 
-          </figure> 
-          <figure class="back"> 
-            <div class="favourites" ondrop="drop(event)" ondragover="allowDrop(event)"> 
-            </div> 
-          </figure> 
-          <figure class="right"> 
-            <div class="favourites" ondrop="drop(event)" ondragover="allowDrop(event)"> 
-            </div> 
-          </figure> 
-          <figure class="left"> 
-            <div class="favourites" ondrop="drop(event)" ondragover="allowDrop(event)"> 
-            </div> 
-          </figure> 
-          <figure class="top"> 
-            <div class="favourites" data-list-to-list-destination-name="favourites" ondrop="drop(event)" ondragover="allowDrop(event)"> 
-              <div class="hover" data-list-to-list-item-id="1"> 
-                <div class="thumbnail thumbnail-108 selected"> 
-                  <h3>C# Developer / Technical Lead</h3>
-                  <h4>475-500 GBP/day</h4>
-                  <h4>London</h4>
-                </div>       
-              </div>
-              <div class="hover" data-list-to-list-item-id="1"> 
-                <div class="thumbnail thumbnail-108"> 
-                  <h3>C# Developer / Technical Lead</h3>
-                  <h4>475-500 GBP/day</h4>
-                  <h4>London</h4>
-                </div>       
-              </div>
-              <div class="hover" data-list-to-list-item-id="1"> 
-                <div class="thumbnail thumbnail-108"> 
-                  <h3>C# Developer / Technical Lead</h3>
-                  <h4>475-500 GBP/day</h4>
-                  <h4>London</h4>
-                </div>       
-              </div>
-              <div class="hover" data-list-to-list-item-id="1"> 
-                <div class="thumbnail thumbnail-108"> 
-                  <h3>C# Developer / Technical Lead</h3>
-                  <h4>475-500 GBP/day</h4>
-                  <h4>London</h4>
-                </div>       
-              </div>
-            </div> 
-          </figure> 
-          <figure class="bottom"> 
-            <div class="favourites" ondrop="drop(event)" ondragover="allowDrop(event)">                 
-            </div> 
-          </figure> 
-        </div> 
-        <ol class="cube-face-labels"> 
-          <li for="f-t">My Job Search (Untitled)</li> 
-          <li for="f-l">My Job Search (Contracting)</li> 
-          <li for="f-f">My Job Search (Untitled)</li> 
-          <li for="f-r">My Job Search (Untitled)</li> 
-          <li for="f-bottom">My Job Search (Untitled)</li> 
-          <li for="f-back">My Job Search (Untitled)</li> 
-        </ol> 
-      </section>
-      <div class="navbar-login">
-        <a class="btn-log-in" href="#">log in</a>
-      </div>
-      <div class="navbar"> 
+        <style>
+            body * {
+                display: none !important;
+            }
+
+            body {
+                width: 100%;
+            }
+
+            #no-script {
+                display: block !important;
+            }
+        </style>
+    </noscript>
+</head>
+<body class="lucid-app-wrapper purchase">
+<div id="search-panel" class="lucid-panel-absolute-full-height overflow-visible">
+    <div id="search-form">
+    </div>
+    <section class="favourite-items cube-container hide">
+        <input id="f-t" name="favourites-panel" type="radio" checked="checked">
+        <input id="f-l" name="favourites-panel" type="radio">
+        <input id="f-f" name="favourites-panel" type="radio">
+        <input id="f-r" name="favourites-panel" type="radio">
+        <input id="f-bottom" name="favourites-panel" type="radio">
+        <input id="f-back" name="favourites-panel" type="radio">
+
+        <div class="cube-controls">
+            <table class="cube-net">
+                <tbody>
+                <tr>
+                    <td colspan="3">
+                        <label for="f-t"></label>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="f-l"></label>
+                    </td>
+                    <td>
+                        <label for="f-f"></label>
+                    </td>
+                    <td>
+                        <label for="f-r"></label>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="3">
+                        <label for="f-bottom"></label>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="3">
+                        <label for="f-back"></label>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="cube">
+            <figure class="front">
+                <div class="favourites" ondrop="drop(event)" ondragover="allowDrop(event)">
+                </div>
+            </figure>
+            <figure class="back">
+                <div class="favourites" ondrop="drop(event)" ondragover="allowDrop(event)">
+                </div>
+            </figure>
+            <figure class="right">
+                <div class="favourites" ondrop="drop(event)" ondragover="allowDrop(event)">
+                </div>
+            </figure>
+            <figure class="left">
+                <div class="favourites" ondrop="drop(event)" ondragover="allowDrop(event)">
+                </div>
+            </figure>
+            <figure class="top">
+                <div class="favourites" data-list-to-list-destination-name="favourites" ondrop="drop(event)"
+                     ondragover="allowDrop(event)">
+                    <div class="hover" data-list-to-list-item-id="1">
+                        <div class="thumbnail thumbnail-108 selected">
+                            <h3>C# Developer / Technical Lead</h3>
+                            <h4>475-500 GBP/day</h4>
+                            <h4>London</h4>
+                        </div>
+                    </div>
+                    <div class="hover" data-list-to-list-item-id="1">
+                        <div class="thumbnail thumbnail-108">
+                            <h3>C# Developer / Technical Lead</h3>
+                            <h4>475-500 GBP/day</h4>
+                            <h4>London</h4>
+                        </div>
+                    </div>
+                    <div class="hover" data-list-to-list-item-id="1">
+                        <div class="thumbnail thumbnail-108">
+                            <h3>C# Developer / Technical Lead</h3>
+                            <h4>475-500 GBP/day</h4>
+                            <h4>London</h4>
+                        </div>
+                    </div>
+                    <div class="hover" data-list-to-list-item-id="1">
+                        <div class="thumbnail thumbnail-108">
+                            <h3>C# Developer / Technical Lead</h3>
+                            <h4>475-500 GBP/day</h4>
+                            <h4>London</h4>
+                        </div>
+                    </div>
+                </div>
+            </figure>
+            <figure class="bottom">
+                <div class="favourites" ondrop="drop(event)" ondragover="allowDrop(event)">
+                </div>
+            </figure>
+        </div>
+        <ol class="cube-face-labels">
+            <li for="f-t">My Job Search (Untitled)</li>
+            <li for="f-l">My Job Search (Contracting)</li>
+            <li for="f-f">My Job Search (Untitled)</li>
+            <li for="f-r">My Job Search (Untitled)</li>
+            <li for="f-bottom">My Job Search (Untitled)</li>
+            <li for="f-back">My Job Search (Untitled)</li>
+        </ol>
+    </section>
+    <div class="navbar-login">
+        <a class="btn-log-in" href="#this-will-open-up-linkedin-login-screen">log in</a>
+    </div>
+    <div class="navbar">
         <a class="btn-my-account" href="#">my account</a> | <a class="btn-log-out" href="#">log out</a>
-      </div>
-      <div class="legal">
-          wizerati. &copy; ben aston 2013 | <a class="btn-advertisers" href="#">advertisers</a>
-          <a href="#" id="advertiser-help">Advertisers start here</a>
-      </div>
     </div>
-    <ul id="result-list-panel" class="lucid-panel-absolute-full-height overflow-y-auto hide">
-         
-    </ul>
-    <div class="lucid-columns-full-height items-of-interest-panel hide">
-      <article class="selected-item overflow-y-scroll lucid-column">
-          <div id="top1" class="in-page-anchor-target"></div>
-          <section class="menu">            
-            <button type="button" data-list-to-list-name="favourites" data-list-to-list-action="toggle" data-list-to-list-item-id="1" class="btn btn-40 btn-primary" title="Add To Favourites">S</button>
-            <button type="button" data-list-to-list-name="favourites" data-list-to-list-action="add" data-list-to-list-item-id="1" class="btn btn-40 btn-primary" title="Block">-</button>
-            <button type="button" data-list-to-list-item-id="1" class="btn btn-40 btn-primary" title="Mark as Applied">2</button>
-            <button type="button" data-list-to-list-item-id="1" class="btn btn-40 btn-primary" title="Pin">@</button>
-          </section>          
-          <section>    
-            <h1>Cheetara Kat</h1> 
-            <h3>New York (<i>Not Currently Available</i>)</h3> 
-            <h3>+44 (0)7742157185 | ben@bj.ma</h3> 
-            <h2>Personal Battle Assistant</h2> 
-            <section> 
-              <article class="itemSummary"> 
-                <blockquote> 
-                  Cheetara is a member of the ThunderCats and the third to join. She is the elder of the two females in the group, the younger being WilyKit. She is a cleric whose skills take advantage of her immense speed. She wields a staff, but is also adapted to fighting unarmed. 
-                </blockquote> 
-              </article> 
-            </section> 
-            <section> 
-              <hr> 
-              <h2>Technologies</h2> 
-              <article style="padding:0;margin:0;"> 
-                <p><strong style="font-weight:bold;">Staff</strong></p> 
-              </article> 
-            </section> 
-            <section> 
-              <hr> 
-              <h2>Experience</h2>          
-              <article> 
-                <h3>Senior Developer</h3> 
-                <h4 style="font-style:italic;">JustGiving</h4> 
-                <h5>Mar 11- Mar 12</h5> 
-                <p style="margin-top:5px;">blah2 blah2blah blahblah blahblah2 blah2blah blahblah blahblah2 blah2blah blahblah blah</p> 
-              </article>             
-              <article> 
-                <h3>Senior Developer</h3> 
-                <h4 style="font-style:italic;">JustGiving</h4> 
-                <h5>Mar 11- Mar 12</h5> 
-                <p style="margin-top:5px;">blah2 blah2blah blahblah blahblah2 blah2blah blahblah blahblah2 blah2blah blahblah blah</p> 
-              </article>               
-            </section> 
-            <section> 
-              <hr/> 
-              <h2>Education</h2> 
-                <article> 
-                  <h4></h4> 
-                  <h5></h5> 
-                  <p></p> 
-                </article> 
-            </section> 
-            <section> 
-              <hr> 
-              <h2>Open Source</h2> 
-              <article> 
-                <h4>NFeature</h4> 
-                <p><a href="github.com">github.com</a></p> 
-              </article> 
-            </section> 
-            <section> 
-              <hr> 
-              <h2>Currently Interested In</h2> 
-              <article> 
-                <p>JavaScript</p> 
-              </article> 
-            </section> 
-            <section> 
-                <hr/> 
-                <h2>Selected Books</h2> 
-              <article> 
-                <p>The Art of Programming, JK Tolkien</p> 
-              </article> 
-            </section> 
-            <section> 
-              <article> 
-                <hr> 
-                <a href="#top1" class="back-to-top">Back to top</a> 
-              </article> 
-            </section> 
-          </section>                   
-      </article>
-      <article class="selected-item overflow-y-scroll lucid-column">
-          <section class="menu">
-			<ul class="pips reset">				
-				<li><a href="#">Pinned Item 1</a></li>
-				<li><a href="#">Pinned Item 2</a></li>
-				<li><a href="#">Pinned Item 3</a></li>
-				<li><a href="#">Pinned Item 4</a></li>
-				<li><a href="#">Pinned Item 5</a></li>
-				<li><a href="#">Pinned Item 6</a></li>
-			</ul>
-            <button type="button" data-list-to-list-name="favourites" data-list-to-list-action="toggle" data-list-to-list-item-id="1" class="btn btn-40 btn-primary">S</button>
-            <button type="button" data-list-to-list-name="favourites" data-list-to-list-action="add" data-list-to-list-item-id="1" class="btn btn-40 btn-primary">-</button>
-            <button type="button" data-list-to-list-item-id="1" class="btn btn-40 btn-primary">2</button>
-            <button type="button" data-list-to-list-item-id="1" class="btn btn-40 btn-primary checked" title="Pin">@</button>
-          </section>          
-          <section>    
-            <h1>Software Architect C#/.Net/Silverlight - Banking</h1> 
-            <h3>Zurich</h3> 
-            <h3>RMIT Professional Resources AG | Gerard Scharm</h3> 
-            <h2>Software Architect</h2> 
-            <section> 
-              <article class="itemSummary"> 
-                <blockquote> 
-                  Software Architect - C#/.Net/Silverlight - Private Banking - Our client, a major Financial Services company, is currently looking for an experienced and sharp minded C# .NET Architect with a strong Banking background and excellent technical skills.
-                </blockquote> 
-              </article> 
-            </section> 
-            <section> 
-              <hr> 
-              <h2>Technologies</h2> 
-              <article style="padding:0;margin:0;"> 
-                <p><strong style="font-weight:bold;">Staff</strong></p> 
-              </article> 
-            </section> 
-            <section> 
-              <hr> 
-              <h2>Experience</h2>          
-              <article> 
-                <h3>Senior Developer</h3> 
-                <h4 style="font-style:italic;">JustGiving</h4> 
-                <h5>Mar 11- Mar 12</h5> 
-                <p style="margin-top:5px;">blah2 blah2blah blahblah blahblah2 blah2blah blahblah blahblah2 blah2blah blahblah blah</p> 
-              </article>             
-              <article> 
-                <h3>Senior Developer</h3> 
-                <h4 style="font-style:italic;">JustGiving</h4> 
-                <h5>Mar 11- Mar 12</h5> 
-                <p style="margin-top:5px;">blah2 blah2blah blahblah blahblah2 blah2blah blahblah blahblah2 blah2blah blahblah blah</p> 
-              </article>               
-            </section> 
-            <section> 
-              <hr/> 
-              <h2>Education</h2> 
-                <article> 
-                  <h4></h4> 
-                  <h5></h5> 
-                  <p></p> 
-                </article> 
-            </section> 
-            <section> 
-              <hr> 
-              <h2>Open Source</h2> 
-              <article> 
-                <h4>NFeature</h4> 
-                <p><a href="github.com">github.com</a></p> 
-              </article> 
-            </section> 
-            <section> 
-              <hr> 
-              <h2>Currently Interested In</h2> 
-              <article> 
-                <p>JavaScript</p> 
-              </article> 
-            </section> 
-            <section> 
-                <hr/> 
-                <h2>Selected Books</h2> 
-              <article> 
-                <p>The Art of Programming, JK Tolkien</p> 
-              </article> 
-            </section> 
-            <section> 
-              <article> 
-                <hr> 
-                <a href="#" class="back-to-top">Back to top</a> 
-              </article> 
-            </section> 
-          </section>                   
-      </article>
+    <div class="legal">
+        wizerati. &copy; ben aston 2013 | <a class="btn-advertisers" href="#">advertisers</a>
+        <a href="#" id="advertiser-help">Advertisers start here</a>
     </div>
+</div>
+<ul id="result-list-panel" class="lucid-panel-absolute-full-height overflow-y-auto hide">
 
-    <script src="http://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.3.3/underscore-min.js"></script>
-  	<script src="http://code.jquery.com/jquery-1.7.2.js"></script>
-    <script src="./javascripts/vendor/tiny-pub-sub.js"></script>
-  	<script src="./javascripts/vendor/_cookie.js"></script>
+</ul>
+<div id="items-of-interest-panel" class="lucid-columns-full-height hide">
+<article class="selected-item overflow-y-scroll lucid-column">
+    <div id="top1" class="in-page-anchor-target"></div>
+    <section class="menu">
+        <button type="button" data-list-to-list-name="favourites" data-list-to-list-action="toggle"
+                data-list-to-list-item-id="1" class="btn btn-40 btn-primary" title="Add To Favourites">S
+        </button>
+        <button type="button" data-list-to-list-name="favourites" data-list-to-list-action="add"
+                data-list-to-list-item-id="1" class="btn btn-40 btn-primary" title="Block">-
+        </button>
+        <button type="button" data-list-to-list-item-id="1" class="btn btn-40 btn-primary" title="Mark as Applied">
+            2
+        </button>
+        <button type="button" data-list-to-list-item-id="1" class="btn btn-40 btn-primary" title="Pin">@</button>
+    </section>
+    <section>
+        <h1>Cheetara Kat</h1>
 
-  	<script src="./javascripts/vendor/invertebrate.js/arrayItemMove.js"></script>
-    <script src="./javascripts/vendor/invertebrate.js/invertebrate.js"></script>
-    <script src="./javascripts/vendor/invertebrate.js/app.js"></script>
-    <script src="./javascripts/vendor/invertebrate.js/config.js"></script>
-    <script src="./javascripts/vendor/invertebrate.js/templateServerSvc.js"></script>
-    <script src="./javascripts/vendor/invertebrate.js/model.js"></script>
-    <script src="./javascripts/vendor/invertebrate.js/view.js"></script>
-    <script src="./javascripts/vendor/invertebrate.js/router.js"></script>
-    <script src="./javascripts/vendor/invertebrate.js/env.js"></script>
+        <h3>New York (<i>Not Currently Available</i>)</h3>
 
-    <script src="./javascripts/application/wizerati.js"></script>
-    
-    <script src="./javascripts/application/wizerati.core/services/CroniclService.js"></script>    
-    <script src="./javascripts/application/wizerati.core/services/LogInService.js"></script>    
-    <script src="./javascripts/application/wizerati.core/services/SearchService.js"></script>    
-    <script src="./javascripts/application/wizerati.core/services/CookieService.js"></script>    
+        <h3>+44 (0)7742157185 | ben@bj.ma</h3>
 
-    <script src="./javascripts/application/wizerati.core/config.js"></script>
+        <h2>Personal Battle Assistant</h2>
+        <section>
+            <article class="itemSummary">
+                <blockquote>
+                    Cheetara is a member of the ThunderCats and the third to join. She is the elder of the two
+                    females in the group, the younger being WilyKit. She is a cleric whose skills take advantage of
+                    her immense speed. She wields a staff, but is also adapted to fighting unarmed.
+                </blockquote>
+            </article>
+        </section>
+        <section>
+            <hr>
+            <h2>Technologies</h2>
+            <article style="padding:0;margin:0;">
+                <p><strong style="font-weight:bold;">Staff</strong></p>
+            </article>
+        </section>
+        <section>
+            <hr>
+            <h2>Experience</h2>
+            <article>
+                <h3>Senior Developer</h3>
+                <h4 style="font-style:italic;">JustGiving</h4>
+                <h5>Mar 11- Mar 12</h5>
 
-    <script src="./javascripts/application/wizerati.core/models/SearchFormModel.js"></script> 
-    <script src="./javascripts/application/wizerati.core/models/ContractModel.js"></script> 
-    <script src="./javascripts/application/wizerati.core/models/ContractorModel.js"></script> 
-    <script src="./javascripts/application/wizerati.core/models/ResultListModel.js"></script> 
-    <script src="./javascripts/application/wizerati.core/models/ResultModel.js"></script> 
+                <p style="margin-top:5px;">blah2 blah2blah blahblah blahblah2 blah2blah blahblah blahblah2 blah2blah
+                    blahblah blah</p>
+            </article>
+            <article>
+                <h3>Senior Developer</h3>
+                <h4 style="font-style:italic;">JustGiving</h4>
+                <h5>Mar 11- Mar 12</h5>
 
-    <script src="./javascripts/application/wizerati.core/views/SearchFormView.js"></script> 
-    <script src="./javascripts/application/wizerati.core/views/ResultListView.js"></script> 
-    <script src="./javascripts/application/wizerati.core/views/SearchFormView.js"></script> 
-    <script src="./javascripts/application/wizerati.core/views/ContractView.js"></script> 
-    <script src="./javascripts/application/wizerati.core/views/ContractorView.js"></script> 
+                <p style="margin-top:5px;">blah2 blah2blah blahblah blahblah2 blah2blah blahblah blahblah2 blah2blah
+                    blahblah blah</p>
+            </article>
+        </section>
+        <section>
+            <hr/>
+            <h2>Education</h2>
+            <article>
+                <h4></h4>
+                <h5></h5>
 
-    <script src="./javascripts/application/wizerati.core/factories/ResultModelFactory.js"></script> 
+                <p></p>
+            </article>
+        </section>
+        <section>
+            <hr>
+            <h2>Open Source</h2>
+            <article>
+                <h4>NFeature</h4>
 
-    <script src="./javascripts/application/modules.js"></script>
-    <script src="./javascripts/application/wizerati.core/app.js"></script>
-    <script src="./javascripts/application/appStart.js"></script>
-    
-    <div id="no-script">
-      JavaScript must be enabled to use this website.
+                <p><a href="github.com">github.com</a></p>
+            </article>
+        </section>
+        <section>
+            <hr>
+            <h2>Currently Interested In</h2>
+            <article>
+                <p>JavaScript</p>
+            </article>
+        </section>
+        <section>
+            <hr/>
+            <h2>Selected Books</h2>
+            <article>
+                <p>The Art of Programming, JK Tolkien</p>
+            </article>
+        </section>
+        <section>
+            <article>
+                <hr>
+                <a href="#top1" class="back-to-top">Back to top</a>
+            </article>
+        </section>
+    </section>
+</article>
+<article class="selected-item overflow-y-scroll lucid-column">
+    <section class="menu">
+        <ul class="pips reset">
+            <li><a href="#">Pinned Item 1</a></li>
+            <li><a href="#">Pinned Item 2</a></li>
+            <li><a href="#">Pinned Item 3</a></li>
+            <li><a href="#">Pinned Item 4</a></li>
+            <li><a href="#">Pinned Item 5</a></li>
+            <li><a href="#">Pinned Item 6</a></li>
+        </ul>
+        <button type="button" data-list-to-list-name="favourites" data-list-to-list-action="toggle"
+                data-list-to-list-item-id="1" class="btn btn-40 btn-primary">S
+        </button>
+        <button type="button" data-list-to-list-name="favourites" data-list-to-list-action="add"
+                data-list-to-list-item-id="1" class="btn btn-40 btn-primary">-
+        </button>
+        <button type="button" data-list-to-list-item-id="1" class="btn btn-40 btn-primary">2</button>
+        <button type="button" data-list-to-list-item-id="1" class="btn btn-40 btn-primary checked" title="Pin">@
+        </button>
+    </section>
+    <section>
+        <h1>Software Architect C#/.Net/Silverlight - Banking</h1>
+
+        <h3>Zurich</h3>
+
+        <h3>RMIT Professional Resources AG | Gerard Scharm</h3>
+
+        <h2>Software Architect</h2>
+        <section>
+            <article class="itemSummary">
+                <blockquote>
+                    Software Architect - C#/.Net/Silverlight - Private Banking - Our client, a major Financial
+                    Services company, is currently looking for an experienced and sharp minded C# .NET Architect
+                    with a strong Banking background and excellent technical skills.
+                </blockquote>
+            </article>
+        </section>
+        <section>
+            <hr>
+            <h2>Technologies</h2>
+            <article style="padding:0;margin:0;">
+                <p><strong style="font-weight:bold;">Staff</strong></p>
+            </article>
+        </section>
+        <section>
+            <hr>
+            <h2>Experience</h2>
+            <article>
+                <h3>Senior Developer</h3>
+                <h4 style="font-style:italic;">JustGiving</h4>
+                <h5>Mar 11- Mar 12</h5>
+
+                <p style="margin-top:5px;">blah2 blah2blah blahblah blahblah2 blah2blah blahblah blahblah2 blah2blah
+                    blahblah blah</p>
+            </article>
+            <article>
+                <h3>Senior Developer</h3>
+                <h4 style="font-style:italic;">JustGiving</h4>
+                <h5>Mar 11- Mar 12</h5>
+
+                <p style="margin-top:5px;">blah2 blah2blah blahblah blahblah2 blah2blah blahblah blahblah2 blah2blah
+                    blahblah blah</p>
+            </article>
+        </section>
+        <section>
+            <hr/>
+            <h2>Education</h2>
+            <article>
+                <h4></h4>
+                <h5></h5>
+
+                <p></p>
+            </article>
+        </section>
+        <section>
+            <hr>
+            <h2>Open Source</h2>
+            <article>
+                <h4>NFeature</h4>
+
+                <p><a href="github.com">github.com</a></p>
+            </article>
+        </section>
+        <section>
+            <hr>
+            <h2>Currently Interested In</h2>
+            <article>
+                <p>JavaScript</p>
+            </article>
+        </section>
+        <section>
+            <hr/>
+            <h2>Selected Books</h2>
+            <article>
+                <p>The Art of Programming, JK Tolkien</p>
+            </article>
+        </section>
+        <section>
+            <article>
+                <hr>
+                <a href="#" class="back-to-top">Back to top</a>
+            </article>
+        </section>
+    </section>
+</article>
+</div>
+<div id="item-management-panel" data-state="intro">
+    <div class="centered-relative-container-450">
+        <div class="intro">
+            <h1>Ad Management</h1>
+            You have the following ads:
+            <ul>
+                <li>Foo</li>
+                <li>Bar</li>
+            </ul>
+        </div>
+        <div class="create-ad">
+            <h1>New Ad</h1>
+            <input id="title" class="field" type="text" name="" placeholder="ad title" required/>
+            <input id="location" class="field" type="text" placeholder="town/city" name=""/>
+            <input id="start-date" class="field" type="date" placeholder="start date" name="name"/>
+            <input id="duration" class="field" type="number" placeholder="contract duration in months" name="name"/>
+            <input id="ad-publication-date" class="field" type="datetime" placeholder="publication date" name="name"/>
+            <textarea id="description"></textarea>
+            <div class="form-button-container">
+                <input type="button" class="btn btn-80 btn-cancel" value="*"/>
+                <input type="button" class="btn btn-80 btn-success" value="3"/>
+            </div>
+        </div>
     </div>
-  </body>
+</div>
+<div id="purchase-panel" data-state="log-in">
+    <div class="centered-relative-container-450">
+        <div class="intro">
+            <h1>Post a job ad in three easy steps</h1>
+
+            <ol>
+                <li>Log in or register</li>
+                <li>Pay</li>
+                <li>Create your ad</li>
+            </ol>
+            <ul class="customer-types">
+                <li class="customer-type">
+                    <p class="label-new-customer">I am a new customer</p>
+                    <label id="btn-new-customer" for="is-new-customer" class="btn btn-80 btn-primary btn-with-notch"
+                           alt="New Customer" title="New Customer">&</label>
+                </li>
+                <li class="customer-type">
+                    <p class="label-existing-customer">I am an existing customer</p>
+                    <label id="btn-existing-customer" for="is-existing-customer"
+                           class="btn btn-80 btn-primary btn-with-notch" alt="Existing Customer"
+                           title="Existing Customer">U</label>
+                </li>
+            </ul>
+        </div>
+        <div class="register">
+            <h1>register</h1>
+            <label for="name">My name is: </label>
+            <input id="name" class="field" type="text" name="name" placeholder="my name is"/>
+            <label for="email-address">Email address: </label>
+            <input id="email-address" class="field" type="text" name="email-address" placeholder="email address"/>
+            <label for="email-address2">Type it again:</label>
+            <input id="email-address2" class="field" type="text" name="email-address2"
+                   placeholder="re-type email address"/>
+            <label for="password">My password is:</label>
+            <input id="password" class="field" type="password" placeholder="password" name="name"/>
+            <label for="password2">Type it again: </label>
+            <input id="password2" class="field" type="password" placeholder="re-type password" name="name"/>
+            <div class="form-button-container">
+                <input type="button" class="btn btn-80 btn-cancel" value="*"/>
+                <input type="button" class="btn btn-80 btn-success" value="3"/>
+            </div>
+        </div>
+        <div class="log-in">
+            <h1>log in</h1>
+            <input id="email-address" class="field" type="text" name="email-address" placeholder="email address"/>
+            <input id="password" class="field" type="password" placeholder="password" name="name"/>
+            <div class="form-button-container">
+                <input type="button" class="btn btn-80 btn-cancel" value="*"/>
+                <input type="button" class="btn btn-80 btn-success" value="3"/>
+            </div>
+        </div>
+        <div class="payment">
+            <h1>payment</h1>
+            TODO: stripe
+            <div class="form-button-container">
+                <input type="button" class="btn btn-80 btn-cancel" value="*"/>
+                <input type="button" class="btn btn-80 btn-success" value="3"/>
+            </div>
+        </div>
+    </div>
+</div>
+<h1 class="logo">wizerati</h1>
+
+<h2 class="logo">IT contract jobs</h2>
+
+<div class="vertical-line"></div>
+<script src="http://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.3.3/underscore-min.js"></script>
+<script src="http://code.jquery.com/jquery-1.7.2.js"></script>
+<script src="./javascripts/vendor/tiny-pub-sub.js"></script>
+<script src="./javascripts/vendor/_cookie.js"></script>
+
+<script src="./javascripts/vendor/invertebrate.js/arrayItemMove.js"></script>
+<script src="./javascripts/vendor/invertebrate.js/invertebrate.js"></script>
+<script src="./javascripts/vendor/invertebrate.js/app.js"></script>
+<script src="./javascripts/vendor/invertebrate.js/config.js"></script>
+<script src="./javascripts/vendor/invertebrate.js/templateServerSvc.js"></script>
+<script src="./javascripts/vendor/invertebrate.js/model.js"></script>
+<script src="./javascripts/vendor/invertebrate.js/view.js"></script>
+<script src="./javascripts/vendor/invertebrate.js/router.js"></script>
+<script src="./javascripts/vendor/invertebrate.js/env.js"></script>
+
+<script src="./javascripts/application/wizerati.js"></script>
+
+<script src="./javascripts/application/wizerati.core/services/CroniclService.js"></script>
+<script src="./javascripts/application/wizerati.core/services/LogInService.js"></script>
+<script src="./javascripts/application/wizerati.core/services/SearchService.js"></script>
+<script src="./javascripts/application/wizerati.core/services/CookieService.js"></script>
+
+<script src="./javascripts/application/wizerati.core/config.js"></script>
+
+<script src="./javascripts/application/wizerati.core/models/SearchFormModel.js"></script>
+<script src="./javascripts/application/wizerati.core/models/ContractModel.js"></script>
+<script src="./javascripts/application/wizerati.core/models/ContractorModel.js"></script>
+<script src="./javascripts/application/wizerati.core/models/ResultListModel.js"></script>
+<script src="./javascripts/application/wizerati.core/models/ResultModel.js"></script>
+
+<script src="./javascripts/application/wizerati.core/views/SearchFormView.js"></script>
+<script src="./javascripts/application/wizerati.core/views/ResultListView.js"></script>
+<script src="./javascripts/application/wizerati.core/views/SearchFormView.js"></script>
+<script src="./javascripts/application/wizerati.core/views/ContractView.js"></script>
+<script src="./javascripts/application/wizerati.core/views/ContractorView.js"></script>
+
+<script src="./javascripts/application/wizerati.core/factories/ResultModelFactory.js"></script>
+
+<script src="./javascripts/application/modules.js"></script>
+<script src="./javascripts/application/wizerati.core/app.js"></script>
+<script src="./javascripts/application/appStart.js"></script>
+
+<div id="no-script">
+    JavaScript must be enabled to use this website.
+</div>
+</body>
 </html>

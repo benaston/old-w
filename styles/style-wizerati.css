@@ -369,6 +369,7 @@ h2.logo {
 .intro,
 .log-in,
 .register,
+.payment,
 #item-management-panel .create-ad,
 #item-management-panel .intro {
     margin: auto;
@@ -382,6 +383,7 @@ h2.logo {
 
 #purchase-panel[data-state='intro'] .intro,
 #purchase-panel[data-state='log-in'] .log-in,
+#purchase-panel[data-state='payment'] .payment,
 #purchase-panel[data-state='register'] .register {
     opacity: 1;
     pointer-events: auto;

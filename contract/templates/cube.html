@@ -1,0 +1,102 @@
+<input id="f-t" name="favourites-panel" type="radio" checked="checked">
+<input id="f-l" name="favourites-panel" type="radio">
+<input id="f-f" name="favourites-panel" type="radio">
+<input id="f-r" name="favourites-panel" type="radio">
+<input id="f-bottom" name="favourites-panel" type="radio">
+<input id="f-back" name="favourites-panel" type="radio">
+
+<div class="cube-controls">
+    <table class="cube-net">
+        <tbody>
+        <tr>
+            <td colspan="3">
+                <label for="f-t"></label>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label for="f-l"></label>
+            </td>
+            <td>
+                <label for="f-f"></label>
+            </td>
+            <td>
+                <label for="f-r"></label>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="3">
+                <label for="f-bottom"></label>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="3">
+                <label for="f-back"></label>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+<div class="cube">
+    <figure class="front">
+        <div class="favourites" ondrop="drop(event)" ondragover="allowDrop(event)">
+        </div>
+    </figure>
+    <figure class="back">
+        <div class="favourites" ondrop="drop(event)" ondragover="allowDrop(event)">
+        </div>
+    </figure>
+    <figure class="right">
+        <div class="favourites" ondrop="drop(event)" ondragover="allowDrop(event)">
+        </div>
+    </figure>
+    <figure class="left">
+        <div class="favourites" ondrop="drop(event)" ondragover="allowDrop(event)">
+        </div>
+    </figure>
+    <figure class="top">
+        <div class="favourites" data-list-to-list-destination-name="favourites" ondrop="drop(event)"
+             ondragover="allowDrop(event)">
+            <div class="hover" data-list-to-list-item-id="1">
+                <div class="thumbnail thumbnail-108 selected">
+                    <h3>C# Developer / Technical Lead</h3>
+                    <h4>475-500 GBP/day</h4>
+                    <h4>London</h4>
+                </div>
+            </div>
+            <div class="hover" data-list-to-list-item-id="1">
+                <div class="thumbnail thumbnail-108">
+                    <h3>C# Developer / Technical Lead</h3>
+                    <h4>475-500 GBP/day</h4>
+                    <h4>London</h4>
+                </div>
+            </div>
+            <div class="hover" data-list-to-list-item-id="1">
+                <div class="thumbnail thumbnail-108">
+                    <h3>C# Developer / Technical Lead</h3>
+                    <h4>475-500 GBP/day</h4>
+                    <h4>London</h4>
+                </div>
+            </div>
+            <div class="hover" data-list-to-list-item-id="1">
+                <div class="thumbnail thumbnail-108">
+                    <h3>C# Developer / Technical Lead</h3>
+                    <h4>475-500 GBP/day</h4>
+                    <h4>London</h4>
+                </div>
+            </div>
+        </div>
+    </figure>
+    <figure class="bottom">
+        <div class="favourites" ondrop="drop(event)" ondragover="allowDrop(event)">
+        </div>
+    </figure>
+</div>
+<ol class="cube-face-labels">
+    <li for="f-t">My Job Search (Untitled)</li>
+    <li for="f-l">My Job Search (Contracting)</li>
+    <li for="f-f">My Job Search (Untitled)</li>
+    <li for="f-r">My Job Search (Untitled)</li>
+    <li for="f-bottom">My Job Search (Untitled)</li>
+    <li for="f-back">My Job Search (Untitled)</li>
+</ol>

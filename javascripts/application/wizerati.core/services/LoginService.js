@@ -34,7 +34,11 @@
 
 		this.getCurrentRole = function () {
 			var cookie = that._cookieService.getAuthorizationCookie();
-			
+
+            if(!cookie) {
+                return that._roleEnum.ContractorStranger;
+            }
+
 			if (cookie !== that._roleEnum.Contractor
                 && cookie !== that._roleEnum.Employer
                 && cookie !== that._roleEnum.ContractorStranger
@@ -42,10 +46,6 @@
 
 				throw "invalid role found in cookie '" + cookie + "'";
             }
-
-            if(cookie === "") {
-				return that._roleEnum.ContractorStranger;
-			}
 
 			return cookie;
 		};

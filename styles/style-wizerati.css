@@ -31,7 +31,7 @@
     margin-top: 8px;
 }
 
-.search #search-form {
+.search #search-form, .greenfield #search-form {
     opacity: 1;
     pointer-events: auto;
 }
@@ -269,7 +269,8 @@ input[type="radio"]:checked + label {
     bottom: 50px;
     position: fixed;
     z-index: 4;
-    opacity: 0 transition : opacity .1 s linear;
+    opacity: 0;
+    transition : opacity .1s linear;
     pointer-events: none;
 }
 
@@ -313,7 +314,9 @@ body {
     transition: width 0s linear .2s;
 }
 
-body.greenfield, body.purchase {
+body.greenfield,
+body.purchase,
+body.log-in-mode {
     width: 100%;
     transition: width 0s linear 0s;
 }
@@ -358,7 +361,9 @@ h2.logo {
     position: relative;
 }
 
-#purchase-panel, #item-management-panel {
+#purchase-panel,
+#item-management-panel,
+#log-in-panel {
     position: relative;
     width: 100%;
     opacity: 0;
@@ -384,12 +389,15 @@ h2.logo {
 #purchase-panel[data-state='intro'] .intro,
 #purchase-panel[data-state='log-in'] .log-in,
 #purchase-panel[data-state='payment'] .payment,
-#purchase-panel[data-state='register'] .register {
+#purchase-panel[data-state='register'] .register,
+#log-in-panel[data-state='log-in'] .log-in,
+#log-in-panel[data-state='register'] .register {
     opacity: 1;
     pointer-events: auto;
 }
 
-.purchase #purchase-panel {
+.purchase #purchase-panel,
+.log-in-mode #log-in-panel {
     opacity: 1;
     pointer-events: auto;
 }
@@ -404,11 +412,12 @@ h2.logo {
 }
 
 .customer-types:after {
-    content: "";
+    content: ".";
     height: 0px;
     width: 0px;
     line-height: 0px;
     clear: both;
+    visibility:hidden;
 }
 
 .customer-type {
@@ -426,4 +435,9 @@ h2.logo {
 .register .btn-success,
 .register   .btn-cancel {
     display: block;
+}
+
+.log-in-mode .navbar {
+    opacity:0;
+    pointer-events: none;
 }

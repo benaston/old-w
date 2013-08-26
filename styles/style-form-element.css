@@ -231,7 +231,6 @@ button.checked {
     left: 34px;
 }
 .form-button-container{
-    overflow: hidden;
     float: right;
     padding-top: 10px;
 }
@@ -240,6 +239,7 @@ button.checked {
     height: 0px;
     clear: both;
     line-height: 0px;
+    visibility:hidden;
 }
 .form-button-container input{
     float: left;

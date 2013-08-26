@@ -19,7 +19,7 @@
     </noscript>
     <title>Wizerati</title>
 </head>
-<body class="lucid-app-wrapper greenfield search">
+<body class="lucid-app-wrapper greenfield">
 <div id="search-panel" class="lucid-panel-absolute-full-height overflow-visible">
     <div id="search-form">
     </div>
@@ -130,6 +130,45 @@
         </div>
     </div>
 </div>
+<div id="log-in-panel" data-state="log-in">
+    <div class="centered-relative-container-450">
+        <div class="log-in">
+            <h1>log in <span class="heading-aside">(<a href="#">register here</a>)</span></h1>
+            <input id="email-address" class="field" type="text" name="email-address" placeholder="email address"/>
+            <input id="password" class="field" type="password" placeholder="password" name="name"/>
+            <div class="form-button-container">
+                <input type="button" class="btn btn-80 btn-cancel" value="*"/>
+                <input type="button" class="btn btn-80 btn-success" value="3"/>
+            </div>
+        </div>
+        <div class="register">
+            <h1>register</h1>
+            <label for="name">My name is: </label>
+            <input id="name" class="field" type="text" name="name" placeholder="my name is"/>
+            <label for="email-address">Email address: </label>
+            <input id="email-address" class="field" type="text" name="email-address" placeholder="email address"/>
+            <label for="email-address2">Type it again:</label>
+            <input id="email-address2" class="field" type="text" name="email-address2"
+                   placeholder="re-type email address"/>
+            <label for="password">My password is:</label>
+            <input id="password" class="field" type="password" placeholder="password" name="name"/>
+            <label for="password2">Type it again: </label>
+            <input id="password2" class="field" type="password" placeholder="re-type password" name="name"/>
+            <div class="form-button-container">
+                <input type="button" class="btn btn-80 btn-cancel" value="*"/>
+                <input type="button" class="btn btn-80 btn-success" value="3"/>
+            </div>
+        </div>
+        <div class="payment">
+            <h1>payment</h1>
+            TODO: stripe
+            <div class="form-button-container">
+                <input type="button" class="btn btn-80 btn-cancel" value="*"/>
+                <input type="button" class="btn btn-80 btn-success" value="3"/>
+            </div>
+        </div>
+    </div>
+</div>
 <h1 class="logo">wizerati</h1>
 
 <h2 class="logo">IT contract jobs</h2>
@@ -164,12 +203,14 @@
 <script src="./javascripts/application/wizerati.core/models/ContractorModel.js"></script>
 <script src="./javascripts/application/wizerati.core/models/ResultListModel.js"></script>
 <script src="./javascripts/application/wizerati.core/models/ResultModel.js"></script>
+<script src="./javascripts/application/wizerati.core/models/AppModel.js"></script>
 
 <script src="./javascripts/application/wizerati.core/views/SearchFormView.js"></script>
 <script src="./javascripts/application/wizerati.core/views/ResultListView.js"></script>
 <script src="./javascripts/application/wizerati.core/views/SearchFormView.js"></script>
 <script src="./javascripts/application/wizerati.core/views/ContractView.js"></script>
 <script src="./javascripts/application/wizerati.core/views/ContractorView.js"></script>
+<script src="./javascripts/application/wizerati.core/views/AppView.js"></script>
 
 <script src="./javascripts/application/wizerati.core/factories/ResultModelFactory.js"></script>
 

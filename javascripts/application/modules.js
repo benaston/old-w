@@ -11,6 +11,13 @@
 		ContractorStranger: "3",
 		EmployerStranger : "4"	
 	};
+
+    mod.UIMode = {
+		GreenfieldSearch: "1",
+		LogIn: "2",
+		Purchase: "3",
+		Search : "4"
+	};
 	
 }(wizerati.mod("enum")));
 

@@ -10,7 +10,8 @@
 
 		var that = this, 
 			_el = "#log-in-panel",
-            _cancelButtonEl = ".btn-cancel";
+            _cancelButtonEl = ".btn-cancel",
+            _uiModeEnum = wizerati.mod("enum").UIMode;
 
 		this.$el = $(_el);
 		this.$cancelButton = $(_el).find(_cancelButtonEl);
@@ -24,20 +25,30 @@
 		this.postRender = function () {
 		};
 
-		this.bindEvents = function ($el, done) {
-			that.$cancelButton.live('click', function () {
-//				app.instanceof.app.Model.setUIMode(app.instance.app.getPreviousUIMode());
+		this.bindEvents = function () {
+		    that.$cancelButton.live('click', function () {
+               cancel();
+            });
 
+            $(document).keyup(function(e) {
+                if (e.keyCode === 27 && app.instance.uiRoot.Model.getUIMode() === _uiModeEnum.LogIn) {
+                    cancel();
+                }
+            });
 
-			});			
-
-			done($el);
+//			done($el);
 		};
 
+        function cancel() {
+            var  prevMode = app.instance.uiRoot.Model.getPreviousUIMode();
+            app.instance.uiRoot.Model.setUIMode(prevMode);
+        }
+
 		function init() {
-			if (!model) { throw "model not supplied"; }
-			
-			that.Model = model;					
+            that.bindEvents();
+//			if (!model) { throw "model not supplied"; }
+//
+//			that.Model = model;
 			
 			return that;
 		}

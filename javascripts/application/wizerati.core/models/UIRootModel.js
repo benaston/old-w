@@ -9,7 +9,8 @@
 
         var that = this,
             _previousUIMode = null,
-            _uiMode = null;
+            _uiMode = null,
+            _uiModeEnum = wizerati.mod("enum").UIMode;
 
         this.updateEventUri = "update://UIRootModel/";
 
@@ -31,7 +32,7 @@
         }
 
         function init() {
-
+            _uiMode = _uiModeEnum.GreenfieldSearch;
             return that;
         }
 

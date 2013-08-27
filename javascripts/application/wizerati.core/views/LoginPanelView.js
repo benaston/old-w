@@ -9,12 +9,14 @@
 		}
 
 		var that = this, 
-			_el = "#log-in-panel";
+			_el = "#log-in-panel",
+            _cancelButtonEl = ".btn-cancel";
 
 		this.$el = $(_el);
+		this.$cancelButton = $(_el).find(_cancelButtonEl);
 		this.Model = null;
 	
-		this.render = function (options) {
+		this.render = function (e, options) {
 			options = options || { done: that.postRender };
 
 		};
@@ -23,8 +25,10 @@
 		};
 
 		this.bindEvents = function ($el, done) {
-			that.$el.on('click', function () {
-				app.instance.resultList.Model.setSelectedItem(that.$el.data("id"));
+			that.$cancelButton.live('click', function () {
+//				app.instanceof.app.Model.setUIMode(app.instance.app.getPreviousUIMode());
+
+
 			});			
 
 			done($el);

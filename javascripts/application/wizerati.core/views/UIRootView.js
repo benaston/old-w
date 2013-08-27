@@ -2,15 +2,12 @@
 
 (function (app) {
 
-	function AppView(model) {
+	function UIRootView(model) {
 
-		if (!(this instanceof app.AppView)) {
-			return new app.AppView(model);
+		if (!(this instanceof app.UIRootView)) {
+			return new app.UIRootView(model);
 		}
-//        GreenfieldSearch: "1",
-//            LogIn: "2",
-//            Purchase: "3",
-//            Search : "4"
+
         var that = this,
             _el = "body",
             _loginButtonEl = ".btn-log-in",
@@ -48,7 +45,7 @@
 		this.bindEvents = function () {
 			that.$loginButton.live('click', function () {
                 that.Model.setUIMode(_uiModeEnum.LogIn);
-			});			
+			});
 		};
 
 		function init() {
@@ -65,6 +62,6 @@
 		return init();
 	};
 
-	app.AppView = AppView;
-	invertebrate.View.isExtendedBy(app.AppView);
+	app.UIRootView = UIRootView;
+	invertebrate.View.isExtendedBy(app.UIRootView);
 }(wizerati));

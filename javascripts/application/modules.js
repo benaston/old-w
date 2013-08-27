@@ -41,3 +41,8 @@
 	mod.TemplateServerSvc = new invertebrate.TemplateServerSvc(wizerati.mod("config").Config, 
 		wizerati.mod("services").CroniclService.getCroniclUri);
 }(wizerati.mod("templates")));
+
+(function (mod) {
+
+	mod.SessionController = new wizerati.SessionController();
+}(wizerati.mod("controllers")));

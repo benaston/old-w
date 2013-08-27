@@ -4,11 +4,15 @@
 	function Router() {
 		this.routes = {};
 
-		this.registerRoute = function (modelType, action) {
-			this.routes[modelType] = action;
+		this.registerRoute = function (uri, action) {
+			this.routes[uri] = action;
 		};
 
-		this.route = function (model, options) {
+		this.route = function (uri, model) {
+			this.routes[uri](model);
+		};
+
+        this.routeByObject = function (model, options) {
 			this.routes[model.constructor.name](model, options);
 		};
 		

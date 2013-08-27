@@ -11,10 +11,12 @@
 		var that = this, 
 			_el = "#log-in-panel",
             _cancelButtonEl = ".btn-cancel",
+            _successButtonEl = ".log-in .btn-success",
             _uiModeEnum = wizerati.mod("enum").UIMode;
 
 		this.$el = $(_el);
 		this.$cancelButton = $(_el).find(_cancelButtonEl);
+        this.$successButton = $(_el).find(_successButtonEl);
 		this.Model = null;
 	
 		this.render = function (e, options) {
@@ -30,11 +32,16 @@
                cancel();
             });
 
+            that.$successButton.live('click', function(){
+                app.instance.router.route('/session/create', { $parentDomNode: that.$el });
+            });
+
             $(document).keyup(function(e) {
                 if (e.keyCode === 27 && app.instance.uiRoot.Model.getUIMode() === _uiModeEnum.LogIn) {
                     cancel();
                 }
             });
+
 
 //			done($el);
 		};

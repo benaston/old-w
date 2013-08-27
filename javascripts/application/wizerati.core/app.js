@@ -24,6 +24,10 @@
 				options = options || { $parentDomNode: $('body') };
 				new wizerati.ContractView(model).render({ done: function ($el) { options.$parentDomNode.append($el); } });
 			});
+
+            that.router.registerRoute('/session/create', function (model) {
+				wizerati.mod('controllers').SessionController.create(model);
+			});
 			
 		};
 

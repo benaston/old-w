@@ -212,6 +212,7 @@ input[type="radio"]:checked + label {
     height: 40px;
     width: 40px;
     border-radius: 40px;
+    margin:2px;
 }
 
 .location-and-posted {
@@ -323,11 +324,13 @@ body.log-in-mode {
 
 .greenfield #search-panel {
     width: 100%;
+    transition: width 0s linear 0s;
 }
 
 .greenfield #search-form {
     top: 100px;
     border-right: 2px solid rgba(0, 109, 204, 0.95);
+    transition: top 0s linear 0s;
 }
 
 .logo {
@@ -379,7 +382,7 @@ h2.logo {
 #item-management-panel .intro {
     margin: auto;
     width: 450px;
-    top: 100px;
+    top: 25px;
     position: absolute;
     opacity: 0;
     pointer-events: none;
@@ -393,7 +396,7 @@ h2.logo {
 #log-in-panel[data-state='log-in'] .log-in,
 #log-in-panel[data-state='register'] .register {
     opacity: 1;
-    pointer-events: auto;
+    pointer-events: inherit;
 }
 
 .purchase #purchase-panel,
@@ -440,4 +443,15 @@ h2.logo {
 .log-in-mode .navbar {
     opacity:0;
     pointer-events: none;
+}
+.panel h1 {
+    margin: 10px 0 0px -100px;
+}
+.message{
+    font-weight: bold;
+    display: none;
+}
+.login-error .message{
+    color: darkred;
+    display: block;
 }

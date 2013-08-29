@@ -24,25 +24,20 @@
 	
 
 (function (mod) {
-
 	mod.Config = new wizerati.Config(invertebrate.env.dev);
 }(wizerati.mod("config")));
 
 (function (mod) {
-	mod.CookieService = new wizerati.CookieService();
-	mod.LogInService = new wizerati.LogInService(wizerati.mod("config").Config, mod.CookieService);
-	mod.CroniclService = new wizerati.CroniclService(mod.LogInService, wizerati.mod("config").Config); //pass in login service instead?
+    mod.AuthenticationService = new wizerati.AuthenticationService();
+    mod.CookieService = new wizerati.CookieService();
+    mod.LogInService = new wizerati.LogInService(wizerati.mod("config").Config, mod.CookieService);
+    mod.CroniclService = new wizerati.CroniclService(mod.LogInService, wizerati.mod("config").Config); //pass in login service instead?
 	mod.ResultModelFactory = new wizerati.ResultModelFactory(mod.LogInService);
-	mod.SearchServiceFunc = new wizerati.SearchService(mod.ResultModelFactory);
+    mod.SearchServiceFunc = new wizerati.SearchService(mod.ResultModelFactory);
 }(wizerati.mod("services")));
 
 (function (mod) {
-	
-	mod.TemplateServerSvc = new invertebrate.TemplateServerSvc(wizerati.mod("config").Config, 
+	mod.TemplateServerSvc = new invertebrate.TemplateServerSvc(wizerati.mod("config").Config,
 		wizerati.mod("services").CroniclService.getCroniclUri);
 }(wizerati.mod("templates")));
 
-(function (mod) {
-
-	mod.SessionController = new wizerati.SessionController();
-}(wizerati.mod("controllers")));

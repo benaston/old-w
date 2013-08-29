@@ -22,6 +22,9 @@
 		this.render = function (e, options) {
 			options = options || { done: that.postRender };
 
+            if(that.Model.getIsLoginFailedMessageVisible()) {
+                that.$el.addClass('login-error');
+            }
 		};
 	
 		this.postRender = function () {
@@ -42,7 +45,6 @@
                 }
             });
 
-
 //			done($el);
 		};
 
@@ -53,10 +55,12 @@
 
 		function init() {
             that.bindEvents();
-//			if (!model) { throw "model not supplied"; }
-//
-//			that.Model = model;
-			
+			if (!model) { throw "model not supplied"; }
+
+			that.Model = model;
+
+            $.subscribe(that.Model.updateEventUri, that.render);
+
 			return that;
 		}
 

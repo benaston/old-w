@@ -26,7 +26,7 @@
 			});
 
             that.router.registerRoute('/session/create', function (model) {
-				wizerati.mod('controllers').SessionController.create(model);
+				app.instance.sessionController.create(model);
 			});
 			
 		};

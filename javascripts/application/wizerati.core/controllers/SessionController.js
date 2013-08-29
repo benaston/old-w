@@ -1,20 +1,36 @@
 "use strict";
 
 (function (app) {
-    function SessionController() {
+    function SessionController(loginPanelModel, authenticationService) {
 
         if (!(this instanceof app.SessionController)) {
-            return new app.SessionController();
+            return new app.SessionController(loginPanelModel, authenticationService);
         }
 
-        var that = this;
+        var that = this,
+            _loginPanelModel = null,
+            _authenticationService = null;
 
         this.create = function(model){
-          //normal stuff
-           console.log('starting session...')
+            if(!_authenticationService.authenticate(model.username, model.password))
+            {
+                _loginPanelModel.setIsLoginFailedMessageVisible(true);
+            }
+
+            console.log('starting session...' + model)
         };
 
         function init() {
+            if(!loginPanelModel) {
+                throw "loginFormPanelModel not supplied.";
+            }
+
+            if(!authenticationService) {
+                throw "authenticationService not supplied.";
+            }
+
+            _loginPanelModel = loginPanelModel;
+            _authenticationService = authenticationService;
 
             return that;
         }

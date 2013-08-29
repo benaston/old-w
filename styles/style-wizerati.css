@@ -11,7 +11,7 @@
 #search-panel {
     left: 0;
     width: 375px; /*modified from 300 to simplify transition timings*/
-    transition: width .2s ease-in-out;
+    transition: width .1s ease-in-out;
 }
 
 #items-of-interest-panel {
@@ -31,7 +31,7 @@
     margin-top: 8px;
 }
 
-.search #search-form, .greenfield #search-form {
+body[data-ui-mode=search] #search-form, body[data-ui-mode=greenfield] #search-form {
     opacity: 1;
     pointer-events: auto;
 }
@@ -45,7 +45,7 @@
     height: 269px;
     position: relative;
     text-align: left;
-    transition: top .2s ease-in-out;
+    transition: top .1s ease-in-out;
     margin: auto;
 }
 
@@ -81,8 +81,8 @@
     left: -23px;
 }
 
-.greenfield .contractor-help,
-.greenfield #advertiser-help {
+body[data-ui-mode=greenfield] .contractor-help,
+body[data-ui-mode=greenfield] #advertiser-help {
     opacity: 1;
     pointer-events: auto;
     transition: opacity .1s linear;
@@ -275,12 +275,12 @@ input[type="radio"]:checked + label {
     pointer-events: none;
 }
 
-.greenfield .navbar-login {
+body[data-ui-mode=greenfield] .navbar-login {
     opacity: 1;
     pointer-events: auto;
 }
 
-.greenfield .navbar {
+body[data-ui-mode=greenfield] .navbar {
     opacity: 0;
     pointer-events: none;
 }
@@ -306,28 +306,28 @@ input[type="radio"]:checked + label {
     transition: box-shadow .1s linear;
 }
 
-.greenfield .btn-advertisers {
+body[data-ui-mode=greenfield] .btn-advertisers {
     box-shadow: 0 0 0 8px white, 0 0 0 10px rgba(0, 109, 204, 0.95);
 }
 
 body {
     min-width: 375px;
-    transition: width 0s linear .2s;
+    transition: width 0s linear .1s;
 }
 
-body.greenfield,
-body.purchase,
-body.log-in-mode {
+body[data-ui-mode=greenfield],
+body[data-ui-mode=purchase],
+body[data-ui-mode=log-in] {
     width: 100%;
     transition: width 0s linear 0s;
 }
 
-.greenfield #search-panel {
+body[data-ui-mode=greenfield] #search-panel {
     width: 100%;
     transition: width 0s linear 0s;
 }
 
-.greenfield #search-form {
+body[data-ui-mode=greenfield] #search-form {
     top: 100px;
     border-right: 2px solid rgba(0, 109, 204, 0.95);
     transition: top 0s linear 0s;
@@ -342,7 +342,7 @@ body.log-in-mode {
     margin-left: 20px;
 }
 
-.greenfield .logo {
+body[data-ui-mode=greenfield] .logo {
     opacity: 1;
 }
 
@@ -399,8 +399,8 @@ h2.logo {
     pointer-events: inherit;
 }
 
-.purchase #purchase-panel,
-.log-in-mode #log-in-panel {
+body[data-ui-mode=purchase] #purchase-panel,
+body[data-ui-mode=log-in] #log-in-panel {
     opacity: 1;
     pointer-events: auto;
 }
@@ -440,7 +440,7 @@ h2.logo {
     display: block;
 }
 
-.log-in-mode .navbar {
+[data-ui-mode=log-in] .navbar {
     opacity:0;
     pointer-events: none;
 }
@@ -454,4 +454,22 @@ h2.logo {
 .login-error .message{
     color: darkred;
     display: block;
+}
+
+.meta-info {
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity .2s linear 0s, visibility 0s linear .2s;
+
+    position: relative;
+    right: -19px;
+    top: 0px;
+}
+
+input[type='text']:focus + .meta-info,
+input[type='password']:focus + .meta-info,
+textarea:focus + .meta-info {
+    visibility: visible;
+    opacity: 1;
+    transition: opacity .2s linear 0s, visibility 0s linear 0s;
 }

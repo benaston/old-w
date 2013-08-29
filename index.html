@@ -19,7 +19,7 @@
     </noscript>
     <title>Wizerati</title>
 </head>
-<body class="lucid-app-wrapper log-in-mode">
+<body class="lucid-app-wrapper" data-ui-mode="log-in">
 <div id="search-panel" class="panel lucid-panel-absolute-full-height overflow-visible">
     <div id="search-form">
     </div>
@@ -133,10 +133,12 @@
 <div id="log-in-panel" class="panel" data-state="log-in">
     <div class="centered-relative-container-450">
         <div class="log-in">
-            <h1>log in <span class="heading-aside">(<a href="#">register here</a>)</span></h1>
-            <p  class="message">You suck!</p>
+            <h1>log in <div class="heading-aside">(<a href="#">register here</a>)</div></h1>
+            <p  class="message">The username or password you have entered is incorrect.</p>
             <input id="email-address" class="field" type="text" name="email-address" placeholder="email address"/>
+            <label for="email-address" class="meta-info">e.g. example@example.com</label>
             <input id="password" class="field" type="password" placeholder="password" name="name"/>
+
             <div class="form-button-container">
                 <input type="button" class="btn btn-80 btn-cancel" value="*"/>
                 <input type="button" class="btn btn-80 btn-success" value="3"/>
@@ -149,10 +151,9 @@
             <label for="email-address">Email address: </label>
             <input id="email-address" class="field" type="text" name="email-address" placeholder="email address"/>
             <label for="email-address2">Type it again:</label>
-            <input id="email-address2" class="field" type="text" name="email-address2"
-                   placeholder="re-type email address"/>
-            <label for="password">My password is:</label>
+            <input id="email-address2" class="field" type="text" name="email-address2" placeholder="re-type email address"/>
             <input id="password" class="field" type="password" placeholder="password" name="name"/>
+            <label for="password" class="meta-info">must be at least 6 characters long</label>
             <label for="password2">Type it again: </label>
             <input id="password2" class="field" type="password" placeholder="re-type password" name="name"/>
             <div class="form-button-container">

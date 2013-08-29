@@ -11,6 +11,7 @@
     text-align: center;
     box-sizing: border-box;
     border: 2px solid;
+    transition: border-color 0.1s linear, box-shadow 0.1s linear;
 }
 
 .btn-40 {
@@ -54,8 +55,8 @@
 .btn:enabled:hover {
     text-decoration: none;
     border-color: rgba(0, 0, 0, 0.85) rgba(0, 0, 0, 0.85) rgba(0, 0, 0, 0.85) !important;
-    -webkit-transition: border-color 0.1s linear, box-shadow 0.1s linear;
     box-shadow: 0 0 9px 2px rgba(200, 200, 200, 0.2);
+
 }
 
 .btn:enabled:focus {
@@ -118,16 +119,17 @@ html .uneditable-input {
     margin: 20px 20px 0px 20px;
     background: rgba(0, 0, 0, 0);
     border: none;
-    border-bottom: 1px dotted rgb(91, 91, 120);
+    border-bottom: 1px dashed rgb(91, 91, 120);
     display: inline-block;
     vertical-align: middle;
     outline: none;
     padding: 0;
-    -webkit-transition: border linear 0.2s, box-shadow linear 0.2s;
     width: 226px;
+    transition: border linear 0.2s, box-shadow linear 0.2s;
 }
 
-input[type="text"]:focus {
+input[type="text"]:focus,
+input[type="password"]:focus {
     border-bottom: 1px dashed rgba(0, 109, 204, 0.95);;
 }
 

@@ -14,7 +14,7 @@
             _uiModeEnum = wizerati.mod("enum").UIMode,
             _bodyClasses = [
                             { key: _uiModeEnum.GreenfieldSearch, value: "greenfield" },
-                            { key: _uiModeEnum.LogIn, value: "log-in-mode" },
+                            { key: _uiModeEnum.LogIn, value: "log-in" },
                             { key: _uiModeEnum.Purchase, value: "purchase" },
                             { key: _uiModeEnum.Search, value: "search" } ];
 
@@ -28,13 +28,13 @@
 
             var uiMode = that.Model.getUIMode();
 
-            _.each(_bodyClasses, function(c){
-                if(c.key !== uiMode){
-                    that.$el.removeClass(c.value);
-                }
-            });
+//            _.each(_bodyClasses, function(c){
+//                if(c.key !== uiMode){
+//                    that.$el.removeClass(c.value);
+//                }
+//            });
 
-            that.$el.addClass(_.find(_bodyClasses, function(e){
+            that.$el.data("ui-mode", _.find(_bodyClasses, function(e){
                 return e.key === uiMode;
             }).value);
 		};

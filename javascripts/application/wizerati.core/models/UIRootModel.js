@@ -33,6 +33,7 @@
 
         function init() {
             _uiMode = _uiModeEnum.GreenfieldSearch;
+
             return that;
         }
 

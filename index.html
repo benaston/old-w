@@ -19,7 +19,7 @@
     </noscript>
     <title>Wizerati</title>
 </head>
-<body class="lucid-app-wrapper" data-ui-mode="log-in">
+<body class="lucid-app-wrapper" data-ui-mode="greenfield">
 <div id="search-panel" class="panel lucid-panel-absolute-full-height overflow-visible">
     <div id="search-form">
     </div>
@@ -27,14 +27,14 @@
 
     </section>
     <div class="navbar-login">
-        <a class="btn-log-in" href="#this-will-open-up-linkedin-login-screen">log in</a>
+        <a class="btn-log-in" href="/login">log in</a>
     </div>
     <div class="navbar">
         <a class="btn-my-account" href="#">my account</a> | <a class="btn-log-out" href="#">log out</a>
     </div>
     <div class="legal">
-        wizerati. &copy; ben aston 2013 | <a class="btn-advertisers" href="#">advertisers</a>
-        <a href="#" id="advertiser-help">Advertisers start here</a>
+        wizerati. &copy; ben aston 2013 | <a class="btn-advertisers" href="/advertisers">advertisers</a>
+        <a href="/advertisers" id="advertiser-help">Advertisers start here</a>
     </div>
 </div>
 <ul id="result-list-panel" class="panel lucid-panel-absolute-full-height overflow-y-auto hide">
@@ -69,7 +69,7 @@
         </div>
     </div>
 </div>
-<div id="purchase-panel" class="panel" data-state="register">
+<div id="purchase-panel" class="panel" data-state="intro">
     <div class="centered-relative-container-450">
         <div class="intro">
             <h1>Post a job ad in three easy steps</h1>
@@ -219,6 +219,9 @@
 <script src="javascripts/application/wizerati.core/views/LoginPanelView.js"></script>
 
 <script src="javascripts/application/wizerati.core/controllers/SessionController.js"></script>
+<script src="javascripts/application/wizerati.core/controllers/LoginController.js"></script>
+<script src="javascripts/application/wizerati.core/controllers/HomeController.js"></script>
+<script src="javascripts/application/wizerati.core/controllers/AdvertisersController.js"></script>
 
 <script src="./javascripts/application/wizerati.core/factories/ResultModelFactory.js"></script>
 

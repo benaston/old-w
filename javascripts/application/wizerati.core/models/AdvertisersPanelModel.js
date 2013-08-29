@@ -1,10 +1,10 @@
 "use strict";
 
 (function (app) {
-	function LoginPanelModel() {
+	function AdvertisersPanelModel() {
 
-		if (!(this instanceof app.LoginPanelModel)) {
-			return new app.LoginPanelModel();
+		if (!(this instanceof app.AdvertisersPanelModel)) {
+			return new app.AdvertisersPanelModel();
 		}
 
 		var that = this, 
@@ -13,7 +13,7 @@
 			_isLoginFailedMessageVisible = false,
 			_isVisible = false;
 
-		this.updateEventUri = "update://LoginPanelModel/";
+		this.updateEventUri = "update://AdvertisersPanelModel/";
 
 		this.getUsername = function () {
 			return _username;
@@ -58,7 +58,7 @@
 		return init();
 	};
 
-	app.LoginPanelModel = LoginPanelModel;
-	invertebrate.Model.isExtendedBy(app.LoginPanelModel);
+	app.AdvertisersPanelModel = AdvertisersPanelModel;
+	invertebrate.Model.isExtendedBy(app.AdvertisersPanelModel);
 
 }(wizerati));

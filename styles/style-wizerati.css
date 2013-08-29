@@ -94,7 +94,7 @@ body[data-ui-mode=greenfield] #advertiser-help {
     transition: opacity .1s linear;
     /*display:none;*/
     position: absolute;
-    top: -111px;
+    top: -78px;
     left: 341px;
     width: 200px;
     background-color: rgba(0, 109, 204, 0.95);
@@ -115,11 +115,11 @@ body[data-ui-mode=greenfield] #advertiser-help {
     content: '';
     width: 2px;
     background-color: rgba(0, 109, 204, 0.95);
-    height: 133px;
+    height: 123px;
     position: absolute;
-    top: -6px;
-    -webkit-transform: rotate(53deg);
-    left: -57px;
+    top: -18px;
+    -webkit-transform: rotate(66.5deg);
+    left: -60px;
 }
 
 #btn-search {

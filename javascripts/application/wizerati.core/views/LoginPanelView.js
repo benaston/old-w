@@ -31,11 +31,11 @@
 		};
 
 		this.bindEvents = function () {
-		    that.$cancelButton.live('click', function () {
+		    that.$cancelButton.on('click', function () {
                cancel();
             });
 
-            that.$successButton.live('click', function(){
+            that.$successButton.on('click', function(){
                 app.instance.router.route('/session/create', { $parentDomNode: that.$el });
             });
 
@@ -44,13 +44,10 @@
                     cancel();
                 }
             });
-
-//			done($el);
 		};
 
         function cancel() {
-            var  prevMode = app.instance.uiRoot.Model.getPreviousUIMode();
-            app.instance.uiRoot.Model.setUIMode(prevMode);
+            app.instance.router.route('/');
         }
 
 		function init() {

@@ -12,7 +12,7 @@
             _el = "body",
             _loginButtonEl = ".btn-log-in",
             _uiModeEnum = wizerati.mod("enum").UIMode,
-            _bodyClasses = [
+            _uiModeDataValues = [
                             { key: _uiModeEnum.GreenfieldSearch, value: "greenfield" },
                             { key: _uiModeEnum.LogIn, value: "log-in" },
                             { key: _uiModeEnum.Purchase, value: "purchase" },
@@ -28,13 +28,7 @@
 
             var uiMode = that.Model.getUIMode();
 
-//            _.each(_bodyClasses, function(c){
-//                if(c.key !== uiMode){
-//                    that.$el.removeClass(c.value);
-//                }
-//            });
-
-            that.$el.data("ui-mode", _.find(_bodyClasses, function(e){
+            that.$el.attr("data-ui-mode", _.find(_uiModeDataValues, function(e){
                 return e.key === uiMode;
             }).value);
 		};
@@ -43,18 +37,16 @@
 		};
 
 		this.bindEvents = function () {
-			that.$loginButton.live('click', function () {
-                that.Model.setUIMode(_uiModeEnum.LogIn);
-			});
 		};
 
 		function init() {
 			if (!model) { throw "model not supplied"; }
 			
 			that.Model = model;
-            that._uiModeEnum = wizerati.mod("enum").UIMode;
+
             $.subscribe(that.Model.updateEventUri, that.render);
-			that.bindEvents();
+
+            that.bindEvents();
 
 			return that;
 		}

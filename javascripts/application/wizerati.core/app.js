@@ -10,7 +10,7 @@
 
 		this.registerRoutes = function() {
 
-			that.router.registerRoute(app.ResultModel.prototype.constructor.name, function (model, options) {
+            that.router.registerRoute(app.ResultModel.prototype.constructor.name, function (model, options) {
 				options = options || { $parentDomNode: $('body') };
 				new wizerati.ResultView(model).render({ done: function ($el) { options.$parentDomNode.append($el); } });
 			});
@@ -28,7 +28,19 @@
             that.router.registerRoute('/session/create', function (model) {
 				app.instance.sessionController.create(model);
 			});
-			
+
+            that.router.registerRoute('/login', function () {
+                app.instance.loginController.index();
+            });
+
+            that.router.registerRoute('/advertisers', function () {
+                app.instance.advertisersController.index();
+            });
+
+            that.router.registerRoute('/', function () {
+                app.instance.homeController.index();
+            });
+
 		};
 
 		function init() {

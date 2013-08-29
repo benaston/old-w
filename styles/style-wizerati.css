@@ -473,3 +473,7 @@ textarea:focus + .meta-info {
     opacity: 1;
     transition: opacity .2s linear 0s, visibility 0s linear 0s;
 }
+
+#purchase-panel .intro ol {
+    padding: 25px 0 25px 2.50rem;
+}

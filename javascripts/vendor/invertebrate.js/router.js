@@ -23,6 +23,26 @@
         this.routeByObject = function (model, options) {
 			that.routes[model.constructor.name](model, options);
 		};
+
+        function routeHyperlink (evt) {
+            var href = $(this).attr('href');
+            var protocol = 'http//';
+
+            if (href.slice(protocol.length) !== protocol) {
+                evt.preventDefault();
+                that.route(href);
+            }
+        }
+
+        function routeFormSubmission(evt) {
+            var action = $(this).attr('action');
+            var protocol = 'http//';
+
+            if (action.slice(protocol.length) !== protocol) {
+                evt.preventDefault();
+                that.route(action);
+            }
+        }
 		
 		function init() {
             _homeRoute = homeRoute;
@@ -31,17 +51,8 @@
                 that.route(location.pathname);
             });
 
-			$(document).on('click',
-                'a:not([data-bypass])',
-                function (evt) {
-				var href = $(this).attr('href');
-				var protocol = 'http//';
-
-				if (href.slice(protocol.length) !== protocol) {
-					evt.preventDefault();
-					that.route(href);
-				}
-			});
+			$(document).on('click', 'a:not([data-bypass])', routeHyperlink);
+			$(document).on('submit', 'form', routeFormSubmission);
 		}
 		
 		init();

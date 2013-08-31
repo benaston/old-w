@@ -1,36 +1,31 @@
 "use strict";
 
 (function (app) {
-    function SearchController(loginPanelModel, authenticationService) {
+    function SearchController(uiRootModel) {
 
         if (!(this instanceof app.SearchController)) {
-            return new app.SearchController(loginPanelModel, authenticationService);
+            return new app.SearchController(uiRootModel);
         }
 
         var that = this,
-            _loginPanelModel = null,
-            _authenticationService = null;
+            _uiModeEnum = wizerati.mod("enum").UIMode,
+            _uiRootModel = null;
 
-        this.create = function(model){
-            if(!_authenticationService.authenticate(model.username, model.password))
-            {
-                _loginPanelModel.setIsLoginFailedMessageVisible(true);
+
+        this.show = function(model){
+            try {
+                _uiRootModel.setUIMode(_uiModeEnum.Search);
+            } catch(err) {
+                console.log("error: SearchController.index");
             }
-
-            console.log('starting session...' + model)
         };
 
         function init() {
-            if(!loginPanelModel) {
-                throw "loginFormPanelModel not supplied.";
+            if(!uiRootModel) {
+                throw "uiRootModel not supplied.";
             }
 
-            if(!authenticationService) {
-                throw "authenticationService not supplied.";
-            }
-
-            _loginPanelModel = loginPanelModel;
-            _authenticationService = authenticationService;
+            _uiRootModel = uiRootModel;
 
             return that;
         }

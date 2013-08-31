@@ -41,6 +41,10 @@
                 app.instance.homeController.index();
             });
 
+            that.router.registerRoute('/search', function () {
+                app.instance.searchController.show();
+            });
+
 		};
 
 		function init() {

@@ -5,7 +5,6 @@
     border-color: rgba(0, 0, 0, 0.45) rgba(0, 0, 0, 0.45) rgba(0, 0, 0, 0.45) !important;
     margin-left: 10px;
     font-family: 'pictos';
-    text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
     background-color: transparent;
     -webkit-user-select: none;
     text-align: center;
@@ -60,7 +59,14 @@
 }
 
 .btn:enabled:focus {
-    outline: 5px auto -webkit-focus-ring-color;
+    outline: 5px auto rgb(230, 240, 248);
+    outline-offset: 2px;
+
+/*    box-shadow: 0 0 2px 12px rgba(255,255,255,1), 0 0 2px 15px rgba(0, 109, 204, 0.1);*/
+}
+
+label:focus {
+    outline: 5px auto rgb(230, 240, 248);
     outline-offset: 2px;
 }
 
@@ -125,24 +131,22 @@ html .uneditable-input {
     outline: none;
     padding: 0;
     width: 226px;
-    transition: border linear 0.2s, box-shadow linear 0.2s;
+    transition: border linear 0.2s;
 }
 
 input[type="text"]:focus,
 input[type="password"]:focus {
-    border-bottom: 1px dashed rgba(0, 109, 204, 0.95);;
+    border-bottom: 1px dashed rgba(0, 109, 204, 0.95);
+    box-shadow: 0 0 2px 12px rgba(255,255,255,1), 0 0 2px 15px rgba(0, 109, 204, 0.1);
 }
 
 .field {
-    color: rgb(85, 85, 85);
-    font-size: 1.2rem;
-    line-height: 31px;
     height: 31px;
 }
 
 input[type="radio"] {
     position: absolute;
-    visibility: hidden;
+    opacity:0; /*we avoid display none, because it suppresses the built-in required validation message*/
     cursor: pointer;
 }
 
@@ -193,26 +197,11 @@ label.radio-inverted:active {
     box-shadow: 0 0 19px 12px rgba(200, 200, 200, .3);
 }
 
-input[type="checkbox"], input[type="radio"] {
-    display: none;
-}
-
 label {
     margin: 0;
-    -webkit-user-select: none;
+ /*   -webkit-user-select: none;*/
     cursor: pointer;
     display: block;
-}
-
-label {
-    /*margin: 0;*/
-    /*height: 40px;
-    width: 40px;*/
-    /*border: 2px solid #eee;*/
-    -webkit-user-select: none;
-    /*text-align: center;*/
-    cursor: pointer;
-    /*display:block;*/
 }
 
 button.checked {

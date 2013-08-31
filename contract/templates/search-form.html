@@ -1,32 +1,31 @@
-<form name="search-form">
-	<input type="button" id="btn-search" class="btn btn-80 btn-primary" alt="Search" title="Search" value="s"> 
+<form name="search-form" action="/search" method="GET">
     <div class="search-fields"> 
-      <input id="keywords" name="keywords" class="field" pattern="[0-9]{13,16}" required="required" placeholder="Keywords..." tabindex="1" autocorrect="off" autocapitalize="none" type="text"> 
-      <input id="location" name="location" class="field" pattern="[0-9]{13,16}" required="required" placeholder="Location..." tabindex="2" autocorrect="off" autocapitalize="none" type="text">
+      <input id="keywords" name="keywords" class="field" required="required" placeholder="my skills (e.g. ruby, java)" tabindex="1" autocorrect="off" autocapitalize="none" type="text" tabindex="1">
+      <input id="location" name="location" class="field" placeholder="location (e.g. london, w2)" autocorrect="off" autocapitalize="none" type="text" tabindex="1">
     </div> 
     <div class="search-filters"> 
-      <span>Minimum rate (GBP)</span>
+      <span>my minimum daily rate (gbp)</span>
       <table> 
         <tbody><tr>                  
-          <td> 
-            <input id="r350" name="r" type="radio" value="<350"> 
-            <label for="r350">350</label>              
+          <td>
+            <input id="r350" name="r" type="radio" value="<350" tabindex="1" required="required">
+            <label for="r350" tabindex="1">350</label>
           </td> 
           <td> 
             <input id="r450" name="r" type="radio" value="<450"> 
-            <label for="r450">450</label> 
+            <label for="r450" tabindex="1">450</label>
           </td> 
           <td> 
             <input id="r550" name="r" type="radio" value="<550"> 
-            <label for="r550">550</label> 
+            <label for="r550" tabindex="1">550</label>
           </td> 
           <td> 
             <input id="r650" name="r" type="radio" value="<650"> 
-            <label for="r650">650</label> 
+            <label for="r650" tabindex="1">650</label>
           </td> 
           <td> 
             <input id="r750+" name="r" type="radio" value="750+"> 
-            <label for="r750+">750+</label> 
+            <label for="r750+" tabindex="1">750+</label>
           </td> 
           <td> 
             <input id="r850" name="r" type="radio" value="850">                                        
@@ -56,5 +55,6 @@
       </tbody>
       </table>
     </div>
+    <input type="submit" id="btn-search" class="btn btn-80 btn-primary" alt="Search" title="Search" value="s" tabindex="1">
     <label for="keywords" class="contractor-help">Start your search for IT contract jobs here</label>
 </form>

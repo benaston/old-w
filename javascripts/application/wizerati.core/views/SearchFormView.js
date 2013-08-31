@@ -41,12 +41,7 @@
 			//downloaded from the template server.
 			//search service then to instantiate Result models based 
 			//upon the role of the user
-			var $searchButton = that.$el.find("#btn-search");
-			$searchButton.live('click', function (e) { 
-				 app.instance.searchService.runSearch({ keywords: keywords, filterModel: filterModel });				
 
-				return false;
-			});			
 		};
 
 		function init() {

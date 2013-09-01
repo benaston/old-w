@@ -278,10 +278,12 @@ height: 330px;
 }
 
 .cube-controls {
-width: 130px;
+width: 100%;
 position: absolute;
-left: 269px;
-top: 45px;
+left: 0;
+bottom: -48px;
+margin: auto;
+text-align: center;
 }
 
 .cube-net label {
@@ -294,8 +296,17 @@ border: 2px solid #eee;
 
 .cube-face-labels {
 position: relative;
-top: 281px;
-left: -21px;
+top: -32px;
 text-align: center;
 list-style:none;
+    width: 100%;
+    padding: 0;
 }
+
+.cube-controls label{
+    display:inline-block;
+    width:35px;
+    height:35px;
+    border: 2px solid #eee;
+}
+

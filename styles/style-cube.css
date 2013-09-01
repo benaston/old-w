@@ -43,6 +43,14 @@ background-image: url(http://www.signstor.com/us%20flag.jpg);
 background-image: url(http://www.signstor.com/us%20flag.jpg);
 }
 
+#f-t:not(:checked) ~ .cube-controls label[for="f-t"]:hover,
+#f-l:not(:checked) ~ .cube-controls label[for="f-l"]:hover,
+#f-f:not(:checked) ~ .cube-controls label[for="f-f"]:hover,
+#f-r:not(:checked) ~ .cube-controls label[for="f-r"]:hover,
+#f-bottom:not(:checked) ~ .cube-controls label[for="f-bottom"]:hover,
+#f-back:not(:checked) ~ .cube-controls label[for="f-back"]:hover {
+border-color: rgba(255, 200, 0, 0.3);
+}
 #f-t:checked ~ .cube-controls label[for="f-t"], 
 #f-l:checked ~ .cube-controls label[for="f-l"], 
 #f-f:checked ~ .cube-controls label[for="f-f"], 

@@ -196,8 +196,10 @@ body[data-ui-mode=greenfield] #advertiser-help {
     color: black;
 }
 
+
 .favourite-items {
     top: 27px;
+    display:none;
 }
 
 input[type="radio"]:checked + label {
@@ -205,6 +207,10 @@ input[type="radio"]:checked + label {
     color: white;
     box-shadow: 0 0 0 0px rgba(255, 255, 255, 1), 0 0 0 2px rgba(0, 109, 204, 1) !important;
     border: 2px solid white;
+}
+
+.search-filters input[type=radio]:not(:checked)+label:hover {
+    border-color: rgba(255, 200, 0, 0.3);
 }
 
 .search-filters label {
@@ -327,6 +333,10 @@ body[data-ui-mode=log-in] {
 body[data-ui-mode=greenfield] #search-panel {
     width: 100%;
     transition: width 0s linear 0s;
+}
+
+body[data-ui-mode=search] .favourite-items {
+    display:block;
 }
 
 body[data-ui-mode=search] #items-of-interest-panel {

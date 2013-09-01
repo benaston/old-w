@@ -2,11 +2,17 @@
     color: gold !important;
 }
 
+body[data-ui-mode=search] #result-list-panel {
+    display:inline-block;
+}
 #result-list-panel {
     width: 275px;
     left: 382px;
     padding: 0 10px 0 10px;
+    display:none;
 }
+
+
 
 #search-panel {
     left: 0;

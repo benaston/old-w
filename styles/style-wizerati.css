@@ -6,11 +6,8 @@ body[data-ui-mode=search] #result-list-panel {
     display:inline-block;
 }
 #result-list-panel {
-    /*width: 259px;
-    left: 382px;*/
     width: 259px;
     left: 316px;
-    /*padding: 0 10px 0 10px;*/
     display:none;
 }
 

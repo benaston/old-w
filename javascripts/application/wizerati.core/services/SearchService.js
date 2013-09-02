@@ -1,11 +1,12 @@
 "use strict";
 
+//try forcing service types to communicate with the UI only via routing and local storage?
 (function (app) {
 
     function SearchService(resultModelFactory) {
 
         if (!(this instanceof app.SearchService)) {
-            return new app.SearchService();
+            return new app.SearchService(resultModelFactory, resultListModel);
         }
 
         var that = this,
@@ -15,7 +16,8 @@
 
             console.log(keywords, location, rate);
 
-//            $.ajax({ url: options.searchUri, success: success, cache: false });
+            throw "next: use factory to get the uri, then retrieve the data and add it to local storage.";
+//          $.ajax({ url: options.searchUri, success: success, cache: false });
         };
 
         function success(data) {
@@ -23,23 +25,26 @@
                 throw "data not supplied";
             }
 
-            var results = $.parseJSON(data);
-            var resultModels = [];
+            //write the results to local storage, then return to the controller
+            //the controller can then coordinate the updating of any views
 
-            _.each(results, function (r) {
-                resultModels.push(_modelFactory.create(r));
-            });
-
-            app.instance.ResultList.Model.setResults(resultModels);
+//            var results = $.parseJSON(data);
+//            var resultModels = [];
+//
+//            _.each(results, function (r) {
+//                resultModels.push(_modelFactory.create(r));
+//            });
+//
+//
+//            _resultListModel.setResults(resultModels);
         }
 
         function init() {
             if (!resultModelFactory) {
                 throw "resultModelFactory not supplied."
             }
-            ;
 
-            that._resultModelFactory = resultModelFactory;
+            _resultModelFactory = resultModelFactory;
 
             return that;
         }

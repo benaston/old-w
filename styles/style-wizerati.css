@@ -349,6 +349,10 @@ body[data-ui-mode=greenfield] #search-form {
     transition: top 0s linear 0s;
 }
 
+body[data-ui-mode=search] .logo {
+    display:none;
+}
+
 .logo {
     opacity: 0;
     pointer-events: none;
@@ -383,6 +387,7 @@ h2.logo {
 #purchase-panel,
 #item-management-panel,
 #log-in-panel {
+    display:none;
     position: relative;
     width: 100%;
     opacity: 0;

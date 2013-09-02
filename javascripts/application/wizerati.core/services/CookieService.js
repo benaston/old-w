@@ -1,37 +1,37 @@
 "use strict";
 
 (function (app) {
-	function CookieService() {
-		"use strict";
+    function CookieService() {
+        "use strict";
 
-		if (!(this instanceof CookieService)) {
-			return new CookieService(); 
-		}
+        if (!(this instanceof CookieService)) {
+            return new CookieService();
+        }
 
-		var that = this;
+        var that = this,
+            cookieValidityDays = 2,
+            cookieName = "wizerati";
 
-		var cookieValidityDays = 2, cookieName = "wizerati";
+        this.getAuthorizationCookie = function () {
+            return _.cookie(cookieName);
+        };
 
-		this.getAuthorizationCookie = function () {
-			return _.cookie(cookieName);
-		};
+        this.setAuthorizationCookie = function (role) {
+            _.cookie(cookieName, role, { expires: 7, path: '/' });
+        };
 
-		this.setAuthorizationCookie = function (role) {
-			_.cookie(cookieName, role, { expires: 7, path: '/' });
-		};
+        this.deleteAuthorizationCookie = function () {
+            _.cookie(cookieName, null);
+        };
 
-		this.deleteAuthorizationCookie = function () {
-			_.cookie(cookieName, null);
-		};
+        function init() {
+            return that;
+        }
 
-		function init() {
-			return that;
-		}
+        return init();
+    }
 
-		return init();
-	}	
-
-	app.CookieService = CookieService;	
+    app.CookieService = CookieService;
 
 }(wizerati));
 

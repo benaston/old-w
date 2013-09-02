@@ -1,65 +1,71 @@
 "use strict";
 
 (function (app) {
-	function SearchFormModel() {
+    function SearchFormModel() {
 
-		if (!(this instanceof app.SearchFormModel)) {
-			return new app.SearchFormModel(); 
-		}
+        if (!(this instanceof app.SearchFormModel)) {
+            return new app.SearchFormModel();
+        }
 
-		var that = this, 
-		    _title = null, 
-			_description = null,
-			_rate = null;
+        var that = this,
+            _title = null,
+            _description = null,
+            _rate = null;
 
-		this.updateEventUri = "update://SearchFormModel/";
+        this.updateEventUri = "update://SearchFormModel/";
 
-		this.getKeywords = function () {
-			return that._keywords;
-		};
+        this.getKeywords = function () {
+            return that._keywords;
+        };
 
-		this.setKeywords = function (value, options) {
-			options = options || { silent:false };
-			
-			that._keywords = value;
+        this.setKeywords = function (value, options) {
+            options = options || { silent: false };
 
-			if (options && options.silent === true) { return; }
-			
-			$.publish(that.updateEventUri);
-		};
-		
-		this.getLocation = function () {
-			return that._location;
-		};
+            that._keywords = value;
 
-		this.setLocation = function (value, options) {
-			that._location = value;
+            if (options && options.silent === true) {
+                return;
+            }
 
-			if (options && options.silent === true) { return; }
+            $.publish(that.updateEventUri);
+        };
 
-			$.publish(that.updateEventUri);
-		};
+        this.getLocation = function () {
+            return that._location;
+        };
 
-		this.getRate = function () {
-			return that._rate;
-		};
+        this.setLocation = function (value, options) {
+            that._location = value;
 
-		this.setRate = function (value, options) {
-			that._rate = value;
+            if (options && options.silent === true) {
+                return;
+            }
 
-			if (options && options.silent === true) { return; }
+            $.publish(that.updateEventUri);
+        };
 
-			$.publish(that.updateEventUri);
-		};
+        this.getRate = function () {
+            return that._rate;
+        };
 
-		function init() {
-			return that;
-		}
+        this.setRate = function (value, options) {
+            that._rate = value;
 
-		return init();
-	};
+            if (options && options.silent === true) {
+                return;
+            }
 
-	app.SearchFormModel = SearchFormModel;
-	invertebrate.Model.isExtendedBy(app.SearchFormModel);
+            $.publish(that.updateEventUri);
+        };
+
+        function init() {
+            return that;
+        }
+
+        return init();
+    };
+
+    app.SearchFormModel = SearchFormModel;
+    invertebrate.Model.isExtendedBy(app.SearchFormModel);
 
 }(wizerati));

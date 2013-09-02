@@ -12,19 +12,22 @@
             _uiRootModel = null,
             _uiModeEnum = wizerati.mod("enum").UIMode;
 
-
-        this.index = function(){
+        this.index = function () {
             try {
                 _uiRootModel.setUIMode(_uiModeEnum.LogIn);
                 _loginPanelModel.setIsVisible(true);
-            } catch(err) {
+            } catch (err) {
                 console.log("error: LoginController.index");
             }
         };
 
         function init() {
-            if(!loginPanelModel) { throw "loginPanelModel not supplied."; }
-            if(!uiRootModel) { throw "uiRootModel not supplied."; }
+            if (!loginPanelModel) {
+                throw "loginPanelModel not supplied.";
+            }
+            if (!uiRootModel) {
+                throw "uiRootModel not supplied.";
+            }
 
             _loginPanelModel = loginPanelModel;
             _uiRootModel = uiRootModel;

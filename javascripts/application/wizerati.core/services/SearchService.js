@@ -1,57 +1,69 @@
 "use strict";
 
 (function (app) {
-	//todo: split authorization and authentication?
-	function SearchService(resultModelFactory) {
 
-		if (!(this instanceof app.SearchService)) {
-			return new app.SearchService(); 
-		}
+    function SearchService(resultModelFactory) {
 
-		var that = this, 			
-			_resultModelFactory = null;		
+        if (!(this instanceof app.SearchService)) {
+            return new app.SearchService();
+        }
 
-		this.runSearch = function (options) {
-			var defaults = {
-					searchUri:	"./items?q=",
-					keywords: null,
-					filterModel: null,
-					pre: function () { },
-					success: function () { }, //function(data) - instantiate the relevant models from the json for use by the application 
-					error: function (e) { throw "runSearch error: " + e; }
-			};
-			
-			options = _.extend({}, defaults, options);
-			
-			//if(options.pre) { options.pre(); }
+        var that = this,
+            _resultModelFactory = null;
 
-			$.ajax({ url: options.searchUri, success: success, cache: false });
-		};
+        this.runSearch = function (keywords, location, rate) {
 
-		function success(data) {
-			if (!data) { throw "data not supplied"; }
-			
-			var results = $.parseJSON(data);
-			var resultModels = [];
+            console.log(keywords, location, rate);
 
-			_.each(results, function(r) {
-				resultModels.push(_modelFactory.create(r));
-			});
+//            $.ajax({ url: options.searchUri, success: success, cache: false });
+        };
 
-			app.instance.ResultList.Model.setResults(resultModels);
-		}
+        function success(data) {
+            if (!data) {
+                throw "data not supplied";
+            }
 
-		function init() {
-			if(!resultModelFactory) { throw "resultModelFactory not supplied." };
+            var results = $.parseJSON(data);
+            var resultModels = [];
 
-			that._resultModelFactory = resultModelFactory;
+            _.each(results, function (r) {
+                resultModels.push(_modelFactory.create(r));
+            });
 
-			return that;
-		}
+            app.instance.ResultList.Model.setResults(resultModels);
+        }
 
-		return init();
-	};
+        function init() {
+            if (!resultModelFactory) {
+                throw "resultModelFactory not supplied."
+            }
+            ;
 
-	app.SearchService = SearchService;	
+            that._resultModelFactory = resultModelFactory;
+
+            return that;
+        }
+
+        return init();
+    };
+
+    app.SearchService = SearchService;
 
 }(wizerati));
+
+
+//use a factory for the search URI?
+//var defaults = {
+//    searchUri: "./items?q=",
+//    keywords: null,
+//    filterModel: null,
+//    pre: function () {
+//    },
+//    success: function () {
+//    }, //function(data) - instantiate the relevant models from the json for use by the application
+//    error: function (e) {
+//        throw "runSearch error: " + e;
+//    }
+//};
+//
+//options = _.extend({}, defaults, options);

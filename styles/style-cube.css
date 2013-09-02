@@ -250,8 +250,6 @@ margin-left:7px !important;
 }
 
 .favourites .hover {
-width: 106px;
-height: 65px;
 display: inline-block;
 box-sizing: border-box;
 }
@@ -264,17 +262,13 @@ margin:auto;
 height: 100%;
 width: 100%;
 border: none;
-top: 4px;
 position: relative;
 }
 
 .hover {
 background-color: transparent;
-border-radius: 5px;
-margin: 10px;
-width: 219px;
-margin-left: auto;
-margin-right: auto;
+
+margin: 10px 0 10px 0;
 }
 
 .my-favourites {

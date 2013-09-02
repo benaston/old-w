@@ -1,29 +1,29 @@
 "use strict";
 
 (function (app) {
-	//todo: split authorization and authentication?
-	function AuthenticationService(resultModelFactory) {
+    //todo: split authorization and authentication?
+    function AuthenticationService() {
 
-		if (!(this instanceof app.AuthenticationService)) {
-			return new app.AuthenticationService();
-		}
+        if (!(this instanceof app.AuthenticationService)) {
+            return new app.AuthenticationService();
+        }
 
-		var that = this;
+        var that = this;
 
-		this.authenticate = function (username, password) {
+        this.authenticate = function (username, password) {
 
-//			$.ajax({ url: options.searchUri, success: success, cache: false });
+//          $.ajax({ url: options.searchUri, success: success, cache: false });
             return false;
-		};
+        };
 
-		function init() {
+        function init() {
 
-			return that;
-		}
+            return that;
+        }
 
-		return init();
-	};
+        return init();
+    };
 
-	app.AuthenticationService = AuthenticationService;
+    app.AuthenticationService = AuthenticationService;
 
 }(wizerati));
